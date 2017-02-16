@@ -86,5 +86,96 @@ namespace TestFramework
             Assert.IsTrue(Ok);
         }
 
+        [TestMethod]
+
+        public void FindMethodOK()
+        {
+            clsStock AnStock = new clsStock();
+            Boolean Found = false;
+            Int32 StockID = 1;
+            Found = AnStock.Find(StockID);
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+
+        public void TestStockIDFound()
+        {
+            clsStock AnStock = new clsStock();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 StockID = 21;
+            Found = AnStock.Find(StockID);
+            if (AnStock.StockID != 21)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+
+        public void TestItemNameFound()
+        {
+            clsStock AnStock = new clsStock();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 StockID = 21;
+            Found = AnStock.Find(StockID);
+            if (AnStock.ItemName != "Test Name")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+
+        public void TestStockDescriptionFound()
+        {
+            clsStock AnStock = new clsStock();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 StockID = 21;
+            Found = AnStock.Find(StockID);
+            if (AnStock.StockDescription != "Test Description")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+
+        public void TestStockLevelFound()
+        {
+            clsStock AnStock = new clsStock();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 StockID = 21;
+            Found = AnStock.Find(StockID);
+            if (AnStock.StockLevel != 5)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+
+        public void TestStockPriceFound()
+        {
+            clsStock AnStock = new clsStock();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 StockID = 21;
+            Found = AnStock.Find(StockID);
+            if (AnStock.StockCost != 100)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
     }
 }
