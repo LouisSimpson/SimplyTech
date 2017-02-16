@@ -5,6 +5,10 @@ namespace ClassLibrary
     public class clsStock
     {
         private Int32 mStockID;
+        private String mItemName;
+        private String mStockDescription;
+        private Int32 mStockLevel;
+        private Decimal mStockCost;
 
         public clsStock()
         {
@@ -26,6 +30,56 @@ namespace ClassLibrary
             set
             {
                 mStockID = value;
+            }
+        }
+
+        public string ItemName
+        {
+            get
+            {
+                return mItemName;
+            }
+            set
+            {
+                mItemName = value;
+            }
+        }
+
+        public string StockDescription
+        {
+            get
+            {
+                return mStockDescription;
+            }
+
+            set
+            {
+                mStockDescription = value;
+            }
+        }
+
+        public int StockLevel
+        {
+            get
+            {
+                return mStockLevel;
+            }
+
+            set
+            {
+                mStockLevel = value;
+            }
+        }
+
+        public decimal StockCost
+        {
+            get
+            {
+                return mStockCost;
+            }
+            set
+            {
+                mStockCost = value;
             }
         }
 
