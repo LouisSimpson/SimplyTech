@@ -79,5 +79,35 @@ namespace TestFramework
             Assert.AreEqual(AnOrder.QuantityNo, TestData);
 
         }
-    }
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //Create instance of the class to create
+            clsOrder AnOrder = new clsOrder();
+            //create some test data
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 OrderNo = 1;
+            //invoke method
+            Found = AnOrder.Find(OrderNo);
+            //test to see result is correct
+            Assert.IsTrue(Found);
+        }
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test to assign to property
+            Int32 SomeOrder = 1;
+            //invoke method
+            OK = AnOrder.Valid(SomeOrder);
+                //test to see result is correct
+            Assert.IsTrue(OK);
+
+        }
+       
+        }
 }
