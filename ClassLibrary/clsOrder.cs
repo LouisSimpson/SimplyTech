@@ -10,5 +10,15 @@ namespace clslibrary
         public string ProductName { get; set; }
         public int ProductNo { get; set; }
         public int QuantityNo { get; set; }
+
+        public bool Valid(int someOrder)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Find(int orderNo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
