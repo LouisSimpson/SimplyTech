@@ -7,11 +7,22 @@ namespace TestFramework
     [TestClass]
     public class tstStock
     {
+        
+
         [TestMethod]
         public void InstanceOK()
         {
             clsStock TestStock = new clsStock();
             Assert.IsNotNull(TestStock);
+        }
+
+        [TestMethod]
+        public void ItemIDOK()
+        {
+            clsStock TestStock = new clsStock();
+            int TestData = 21;
+            TestStock.StockID = TestData;
+            Assert.AreEqual(TestStock.StockID, TestData);
         }
 
         [TestMethod]
@@ -56,6 +67,15 @@ namespace TestFramework
             clsStock TestStock = new clsStock();
             Boolean Ok;
             Ok = TestStock.valid("GTX1080");
+            Assert.IsTrue(Ok);
+        }
+
+        [TestMethod]
+        public void ValidExistsItemID()
+        {
+            clsStock TestStock = new clsStock();
+            Boolean Ok;
+            Ok = TestStock.valid5(21);
             Assert.IsTrue(Ok);
         }
 
@@ -122,7 +142,7 @@ namespace TestFramework
             Boolean OK = true;
             Int32 StockID = 21;
             Found = AnStock.Find(StockID);
-            if (AnStock.ItemName != "Test Name")
+            if (AnStock.ItemName != "GTX1080")
             {
                 OK = false;
             }
@@ -138,7 +158,7 @@ namespace TestFramework
             Boolean OK = true;
             Int32 StockID = 21;
             Found = AnStock.Find(StockID);
-            if (AnStock.StockDescription != "Test Description")
+            if (AnStock.StockDescription != "Description")
             {
                 OK = false;
             }
@@ -154,7 +174,7 @@ namespace TestFramework
             Boolean OK = true;
             Int32 StockID = 21;
             Found = AnStock.Find(StockID);
-            if (AnStock.StockLevel != 5)
+            if (AnStock.StockLevel != 1)
             {
                 OK = false;
             }
