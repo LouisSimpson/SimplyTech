@@ -106,7 +106,16 @@ namespace ClassLibrary
         public bool Find(int stockID)
         {
             mStockID = 21;
+            mItemName = "GTX1080";
+            mStockDescription = "Description";
+            mStockLevel = 1;
+            mStockCost = 100;
 
+            return true;
+        }
+
+        public bool valid5(int v)
+        {
             return true;
         }
     }
