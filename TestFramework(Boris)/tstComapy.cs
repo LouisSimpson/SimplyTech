@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary;
 
 namespace ClassLibrary
@@ -49,7 +50,7 @@ namespace ClassLibrary
         }
 
         [TestMethod]
-    public void ContactNoOK()
+        public void ContactNoOK()
         {
             clsCompany ACompany = new clsCompany();
             int TestData = 0744121212;
@@ -58,6 +59,28 @@ namespace ClassLibrary
 
         }
 
+
+
+        //[TestMethod]
+        //public void TestAddressFound()
+        //{
+        //    clsCompany ACompany = new clsCompany();
+        //    Boolean Found = false;
+        //    Boolean OK = true;
+        //    string Address = "33";
+        //    Found = ACompany.Find(Address);
+        //    if (ACompany.Address != "33")
+        //    {
+        //        OK = false;
+        //    }
+        //    Assert.IsTrue(OK);
+        //}
+
+        public bool Find(int Address)
+        {
+            Address = 33;
+            return true;
+        }
 
     }
 
