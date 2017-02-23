@@ -13,12 +13,12 @@ namespace clslibrary
 
         public bool Valid(int someOrder)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public bool Find(int orderNo)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

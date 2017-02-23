@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ClassLibrary;
 
-namespace UnitTestProject1
+namespace ClassLibrary
 {
     [TestClass]
     public class tstCompany

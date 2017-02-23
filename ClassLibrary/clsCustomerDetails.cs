@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyClassLibrary
+namespace ClassLibrary
 {
     public class clsCustomerDetails
     {
