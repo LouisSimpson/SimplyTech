@@ -1,5 +1,5 @@
 ﻿using System;
-
+//blah
 namespace ClassLibrary
 {
     public class clsStock
