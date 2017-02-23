@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary;
-//lolpollpol
+
 namespace MyTestFrame
 {
     /// <summary>
@@ -18,7 +18,7 @@ namespace MyTestFrame
             // TODO: Add constructor logic here
             //
         }
-        
+
         #region Additional test attributes
         //
         // You can use the following additional attributes as you write your tests:
@@ -50,10 +50,10 @@ namespace MyTestFrame
         [TestMethod]
         public void FirstName()
         {
-            clsCustomerDetails TestFirstName= new clsCustomerDetails();
+            clsCustomerDetails TestFirstName = new clsCustomerDetails();
             string SomeName = "Jonathan";
             TestFirstName.firstname = SomeName;
-            Assert.AreEqual( SomeName,TestFirstName.firstname);
+            Assert.AreEqual(SomeName, TestFirstName.firstname);
         }
         [TestMethod]
         public void CustomerID()
@@ -72,7 +72,7 @@ namespace MyTestFrame
             Int32 HouseNumber;
             HouseNumber = 25;
             string FirstName;
-            FirstName= "Jonathan";
+            FirstName = "Jonathan";
             Ok = TestHouseNumber.Valid(HouseNumber, FirstName);
             Assert.IsTrue(Ok);
         }
@@ -82,7 +82,7 @@ namespace MyTestFrame
         {
             clsCustomerDetails TestHouseNumber = new clsCustomerDetails();
             Boolean Ok = false;
-            Int32 HouseNumber ;
+            Int32 HouseNumber;
             HouseNumber = 2;
             string FirstName;
             FirstName = "tim";
@@ -113,7 +113,7 @@ namespace MyTestFrame
             HouseNumber = 2;
             string FirstName;
             FirstName = "T";
-            Ok = TestHouseNumber.Valid(HouseNumber,FirstName);
+            Ok = TestHouseNumber.Valid(HouseNumber, FirstName);
             Assert.IsTrue(Ok);
         }
         [TestMethod]
@@ -187,6 +187,78 @@ namespace MyTestFrame
             FirstName = "dhjcngshtdnkdhnaolptdwens";
             Ok = TestHouseNumber.Valid(HouseNumber, FirstName);
             Assert.IsFalse(Ok);
+        }
+        [TestClass]
+        public class tstCustomer
+        {
+            [TestMethod]
+            public void InstanceOk()
+            {
+                //instance of the class
+                clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+                //create some test data to assign to the property 
+                Assert.IsNotNull(CustomerDetails);
+            }
+            [TestMethod]
+            public void CardNumber()
+            {
+                //instance of the class
+                clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+                //create some test data to assign to the property 
+                string TestData = "0236562385697459";
+                //assign the data to the property
+                CustomerDetails.CardNumber = TestData;
+                //test to see that the two values are the same 
+                Assert.AreEqual(CustomerDetails.CardNumber, TestData);
+            }
+            [TestMethod]
+            public void AccountNumber()
+            {
+                //instance of the class
+                clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+                //create some test data to assign to the property 
+                string TestData = "00856324";
+                //assign the data to the property
+                CustomerDetails.AccountNumber = TestData;
+                //test to see that the two values are the same 
+                Assert.AreEqual(CustomerDetails.AccountNumber, TestData);
+            }
+            [TestMethod]
+            public void SortCode()
+            {
+                //instance of the class
+                clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+                //create some test data to assign to the property 
+                string TestData = "004853";
+                //assign the data to the property
+                CustomerDetails.SortCode = TestData;
+                //test to see that the two values are the same 
+                Assert.AreEqual(CustomerDetails.SortCode, TestData);
+            }
+            [TestMethod]
+            public void SecurityCode()
+            {
+                //instance of the class
+                clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+                //create some test data to assign to the property 
+                string TestData = "458";
+                //assign the data to the property
+                CustomerDetails.SecurityCode = TestData;
+                //test to see that the two values are the same 
+                Assert.AreEqual(CustomerDetails.SecurityCode, TestData);
+            }
+            [TestMethod]
+            public void ExpiryDate()
+            {
+                //instance of the class
+                clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+                //create some test data to assign to the property 
+                string TestData = "11/06";
+                //assign the data to the property
+                CustomerDetails.ExpiryDate = TestData;
+                //test to see that the two values are the same 
+                Assert.AreEqual(CustomerDetails.ExpiryDate, TestData);
+            }
         }
     }
 }

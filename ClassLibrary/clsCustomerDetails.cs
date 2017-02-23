@@ -4,8 +4,13 @@ namespace ClassLibrary
 {
     public class clsCustomerDetails
     {
+        public string AccountNumber { get; set; }
+        public string CardNumber { get; set; }
         public int customerid { get; set; }
+        public string ExpiryDate { get; set; }
         public string firstname { get; set; }
+        public string SecurityCode { get; set; }
+        public string SortCode { get; set; }
 
         public bool Valid(int houseNumber, string firstName)
         {
