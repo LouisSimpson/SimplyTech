@@ -57,8 +57,8 @@ namespace TestFramework
         {
             clsStock TestStock = new clsStock();
             int TestData = 400;
-            TestStock.StockPrice = TestData;
-            Assert.AreEqual(TestStock.StockPrice, TestData);
+            TestStock.StockCost = TestData;
+            Assert.AreEqual(TestStock.StockCost,TestData);
         }
 
        /* [TestMethod]
@@ -624,7 +624,7 @@ namespace TestFramework
             Boolean OK = true;
             Int32 StockID = 21;
             Found = AnStock.Find(StockID);
-            if (AnStock.StockCost != 100)
+            if (AnStock.StockPrice != 100)
             {
                 OK = false;
             }

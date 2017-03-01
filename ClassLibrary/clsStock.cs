@@ -8,7 +8,7 @@ namespace ClassLibrary
         private String mItemName;
         private String mStockDescription;
         private Int32 mStockLevel;
-        private Decimal mStockCost;
+        private Decimal mStockPrice;
 
         public clsStock()
         {
@@ -18,7 +18,7 @@ namespace ClassLibrary
         public string StockName { get; set; }
         public string StockDesc { get; set; }
         public int Stocklvl { get; set; }
-        public int StockPrice { get; set; }
+        public int StockCost { get; set; }
 
         public int StockID
         {
@@ -71,15 +71,15 @@ namespace ClassLibrary
             }
         }
 
-        public decimal StockCost
+        public decimal StockPrice
         {
             get
             {
-                return mStockCost;
+                return mStockPrice;
             }
             set
             {
-                mStockCost = value;
+                mStockPrice = value;
             }
         }
 
@@ -109,7 +109,7 @@ namespace ClassLibrary
             mItemName = "GTX1080";
             mStockDescription = "Description";
             mStockLevel = 1;
-            mStockCost = 100;
+            mStockPrice = 100;
 
             return true;
         }
