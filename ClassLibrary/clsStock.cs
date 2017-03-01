@@ -114,6 +114,64 @@ namespace ClassLibrary
             return true;
         }
 
+        /*public bool ValidExists(string ItemName, string stockDescription, int stockLevel, int stockPrice)
+        {
+            Boolean OK = true;
+
+            if (ItemName.Length == 0)
+            {
+                OK = false;
+            }
+
+            if(ItemName.Length > 50)
+            {
+                OK = false;
+            }
+
+            if (StockDescription.Length == 0)
+            {
+
+                OK = false;   
+
+            }
+
+            if (StockDescription.Length > 50)
+            {
+                OK = false;
+            }
+
+            if (StockLevel == -1)
+            {
+
+                OK = false;
+
+            }
+
+            if (StockLevel > 100)
+            {
+                OK = false;
+            }
+
+            if (StockPrice == -1)
+            {
+
+                OK = false;
+
+            }
+
+            if (StockPrice > 100)
+            {
+                OK = false;
+            }
+
+
+
+
+
+
+            return OK;
+        }*/
+
         public bool valid5(int v)
         {
             return true;
