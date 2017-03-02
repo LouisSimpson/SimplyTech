@@ -105,13 +105,29 @@ namespace ClassLibrary
 
         public bool Find(int stockID)
         {
-            mStockID = 21;
-            mItemName = "GTX1080";
-            mStockDescription = "Description";
-            mStockLevel = 1;
-            mStockPrice = 100;
 
-            return true;
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@StockID", StockID);
+            DB.Execute("sproc_Stock_FilterByStockID");
+
+            if (DB.Count == 1)
+            {
+                mStockID = Convert.ToInt32(DB.DataTable.Rows[0]["StockID"]);
+                mItemName = Convert.ToString(DB.DataTable.Rows[0]["ItemName"]);
+                mStockDescription = Convert.ToString(DB.DataTable.Rows[0]["StockDescription"]);
+                mStockLevel = Convert.ToInt32(DB.DataTable.Rows[0]["StockLevel"]);
+                mStockPrice = Convert.ToInt32(DB.DataTable.Rows[0]["StockPrice"]);
+
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+           
+
+            
         }
 
         /*public bool ValidExists(string ItemName, string stockDescription, int stockLevel, int stockPrice)
