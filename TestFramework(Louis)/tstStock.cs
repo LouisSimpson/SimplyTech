@@ -7,7 +7,7 @@ namespace TestFramework
     [TestClass]
     public class tstStock
     {
-        
+
 
         [TestMethod]
         public void InstanceOK()
@@ -58,439 +58,439 @@ namespace TestFramework
             clsStock TestStock = new clsStock();
             int TestData = 400;
             TestStock.StockCost = TestData;
-            Assert.AreEqual(TestStock.StockCost,TestData);
+            Assert.AreEqual(TestStock.StockCost, TestData);
         }
 
-       /* [TestMethod]
-        public void ValidMethodOK()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+        /* [TestMethod]
+         public void ValidMethodOK()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockItemNameMinLessOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsFalse(OK);
-        }
+         [TestMethod]
+         public void StockItemNameMinLessOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsFalse(OK);
+         }
 
-        [TestMethod]
-        public void StockItemNameMin()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "G";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockItemNameMin()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "G";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockItemNameMinPlusOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GT";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockItemNameMinPlusOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GT";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockItemNameMaxLessOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtg";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockItemNameMaxLessOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtg";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockItemNameMax()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgt";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockItemNameMax()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgt";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockItemNameMid()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "gtgtgtgtgtgtgtgtgtgtgtgtg";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockItemNameMid()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "gtgtgtgtgtgtgtgtgtgtgtgtg";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockItemNameMaxPlusOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtg";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsFalse(OK);
-        }
+         [TestMethod]
+         public void StockItemNameMaxPlusOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtg";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsFalse(OK);
+         }
 
-        [TestMethod]
-        public void StockItemNameExtremeMax()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "";
-            ItemName = ItemName.PadRight(1000, 'a');
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsFalse(OK);
-        }
+         [TestMethod]
+         public void StockItemNameExtremeMax()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "";
+             ItemName = ItemName.PadRight(1000, 'a');
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsFalse(OK);
+         }
 
-        [TestMethod]
-        public void StockDescriptionMinLessOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX1080";
-            string StockDescription = "";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsFalse(OK);
-        }
+         [TestMethod]
+         public void StockDescriptionMinLessOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX1080";
+             string StockDescription = "";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsFalse(OK);
+         }
 
-        [TestMethod]
-        public void StockDescriptionMin()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "AMD GPU";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockDescriptionMin()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "AMD GPU";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockDescriptionMinPlusOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTx 1080";
-            string StockDescription = "Nvidia GPUA";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockDescriptionMinPlusOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTx 1080";
+             string StockDescription = "Nvidia GPUA";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockDescriptionMaxLessOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "ababababababababababababababababababababababababa";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockDescriptionMaxLessOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "ababababababababababababababababababababababababa";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockDescriptionNameMax()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgt";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockDescriptionNameMax()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgt";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockDescriptionMid()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX1080";
-            string StockDescription = "gtgtgtgtgtgtgtgtgtgtgtgtg";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockDescriptionMid()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX1080";
+             string StockDescription = "gtgtgtgtgtgtgtgtgtgtgtgtg";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockDescriptionMaxPlusOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtg";
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsFalse(OK);
-        }
+         [TestMethod]
+         public void StockDescriptionMaxPlusOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtg";
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsFalse(OK);
+         }
 
-        [TestMethod]
-        public void StockDescriptionExtremeMax()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "";
-            StockDescription = StockDescription.PadRight(1000, 'a');
-            int StockLevel = 2;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsFalse(OK);
-        }
+         [TestMethod]
+         public void StockDescriptionExtremeMax()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "";
+             StockDescription = StockDescription.PadRight(1000, 'a');
+             int StockLevel = 2;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsFalse(OK);
+         }
 
-        [TestMethod]
-        public void StockLevelMinLessOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = -1;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsFalse(OK);
-        }
+         [TestMethod]
+         public void StockLevelMinLessOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = -1;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsFalse(OK);
+         }
 
-        [TestMethod]
-        public void StockLevelMin()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 0;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockLevelMin()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 0;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockLevelMinPlusOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 1;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockLevelMinPlusOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 1;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockLevelMaxLessOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 99;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockLevelMaxLessOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 99;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockLevelMax()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 100;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockLevelMax()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 100;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockLevelMid()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 50;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockLevelMid()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 50;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockLevelMaxPlusOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 101;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsFalse(OK);
-        }
+         [TestMethod]
+         public void StockLevelMaxPlusOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 101;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsFalse(OK);
+         }
 
-        [TestMethod]
-        public void StockLevelExtremeMax()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2000;
-            int StockPrice = 400;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsFalse(OK);
-        }
+         [TestMethod]
+         public void StockLevelExtremeMax()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2000;
+             int StockPrice = 400;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsFalse(OK);
+         }
 
-        [TestMethod]
-        public void StockPriceMinLessOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = -1;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsFalse(OK);
-        }
+         [TestMethod]
+         public void StockPriceMinLessOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = -1;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsFalse(OK);
+         }
 
-        [TestMethod]
-        public void StockPriceMin()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 0;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockPriceMin()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 0;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockPriceMinPlusOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 1;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockPriceMinPlusOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 1;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockPriceMaxLessOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 9999;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockPriceMaxLessOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 9999;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockPriceMax()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 10000;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockPriceMax()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 10000;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockPriceMid()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 5000;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsTrue(OK);
-        }
+         [TestMethod]
+         public void StockPriceMid()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 5000;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsTrue(OK);
+         }
 
-        [TestMethod]
-        public void StockPriceMaxPlusOne()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 10001;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsFalse(OK);
-        }
+         [TestMethod]
+         public void StockPriceMaxPlusOne()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 10001;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsFalse(OK);
+         }
 
-        [TestMethod]
-        public void StockPriceExtremeMax()
-        {
-            clsStock TestStock = new clsStock();
-            Boolean OK = false;
-            string ItemName = "GTX 1080";
-            string StockDescription = "Nvidia GPU";
-            int StockLevel = 2;
-            int StockPrice = 1000000;
-            OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
-            Assert.IsFalse(OK);
-        }*/
+         [TestMethod]
+         public void StockPriceExtremeMax()
+         {
+             clsStock TestStock = new clsStock();
+             Boolean OK = false;
+             string ItemName = "GTX 1080";
+             string StockDescription = "Nvidia GPU";
+             int StockLevel = 2;
+             int StockPrice = 1000000;
+             OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
+             Assert.IsFalse(OK);
+         }*/
 
 
 
@@ -541,95 +541,95 @@ namespace TestFramework
         }
 
         [TestMethod]
+        
+                public void FindMethodOK()
+                {
+                    clsStock AnStock = new clsStock();
+                    Boolean Found = false;
+                    Int32 StockID = 1;
+                    Found = AnStock.Find(StockID);
+                    Assert.IsTrue(Found);
+                }
 
-        public void FindMethodOK()
-        {
-            clsStock AnStock = new clsStock();
-            Boolean Found = false;
-            Int32 StockID = 1;
-            Found = AnStock.Find(StockID);
-            Assert.IsTrue(Found);
-        }
+                [TestMethod]
 
-        [TestMethod]
+                public void TestStockIDFound()
+                {
+                    clsStock AnStock = new clsStock();
+                    Boolean Found = false;
+                    Boolean OK = true;
+                    Int32 StockID = 21;
+                    Found = AnStock.Find(StockID);
+                    if (AnStock.StockID != 21)
+                    {
+                        OK = false;
+                    }
+                    Assert.IsTrue(OK);
+                }
 
-        public void TestStockIDFound()
-        {
-            clsStock AnStock = new clsStock();
-            Boolean Found = false;
-            Boolean OK = true;
-            Int32 StockID = 21;
-            Found = AnStock.Find(StockID);
-            if (AnStock.StockID != 21)
-            {
-                OK = false;
-            }
-            Assert.IsTrue(OK);
-        }
+                [TestMethod]
 
-        [TestMethod]
+                public void TestItemNameFound()
+                {
+                    clsStock AnStock = new clsStock();
+                    Boolean Found = false;
+                    Boolean OK = true;
+                    Int32 StockID = 21;
+                    Found = AnStock.Find(StockID);
+                    if (AnStock.ItemName != "GTX1080")
+                    {
+                        OK = false;
+                    }
+                    Assert.IsTrue(OK);
+                }
 
-        public void TestItemNameFound()
-        {
-            clsStock AnStock = new clsStock();
-            Boolean Found = false;
-            Boolean OK = true;
-            Int32 StockID = 21;
-            Found = AnStock.Find(StockID);
-            if (AnStock.ItemName != "GTX1080")
-            {
-                OK = false;
-            }
-            Assert.IsTrue(OK);
-        }
+                [TestMethod]
 
-        [TestMethod]
+                public void TestStockDescriptionFound()
+                {
+                    clsStock AnStock = new clsStock();
+                    Boolean Found = false;
+                    Boolean OK = true;
+                    Int32 StockID = 21;
+                    Found = AnStock.Find(StockID);
+                    if (AnStock.StockDescription != "Description")
+                    {
+                        OK = false;
+                    }
+                    Assert.IsTrue(OK);
+                }
 
-        public void TestStockDescriptionFound()
-        {
-            clsStock AnStock = new clsStock();
-            Boolean Found = false;
-            Boolean OK = true;
-            Int32 StockID = 21;
-            Found = AnStock.Find(StockID);
-            if (AnStock.StockDescription != "Description")
-            {
-                OK = false;
-            }
-            Assert.IsTrue(OK);
-        }
+                [TestMethod]
 
-        [TestMethod]
+                public void TestStockLevelFound()
+                {
+                    clsStock AnStock = new clsStock();
+                    Boolean Found = false;
+                    Boolean OK = true;
+                    Int32 StockID = 21;
+                    Found = AnStock.Find(StockID);
+                    if (AnStock.StockLevel != 1)
+                    {
+                        OK = false;
+                    }
+                    Assert.IsTrue(OK);
+                }
 
-        public void TestStockLevelFound()
-        {
-            clsStock AnStock = new clsStock();
-            Boolean Found = false;
-            Boolean OK = true;
-            Int32 StockID = 21;
-            Found = AnStock.Find(StockID);
-            if (AnStock.StockLevel != 1)
-            {
-                OK = false;
-            }
-            Assert.IsTrue(OK);
-        }
+                [TestMethod]
 
-        [TestMethod]
-
-        public void TestStockPriceFound()
-        {
-            clsStock AnStock = new clsStock();
-            Boolean Found = false;
-            Boolean OK = true;
-            Int32 StockID = 21;
-            Found = AnStock.Find(StockID);
-            if (AnStock.StockPrice != 100)
-            {
-                OK = false;
-            }
-            Assert.IsTrue(OK);
-        }
+                public void TestStockPriceFound()
+                {
+                    clsStock AnStock = new clsStock();
+                    Boolean Found = false;
+                    Boolean OK = true;
+                    Int32 StockID = 21;
+                    Found = AnStock.Find(StockID);
+                    if (AnStock.StockPrice != 100)
+                    {
+                        OK = false;
+                    }
+                    Assert.IsTrue(OK);
+                }
 
     }
 }
