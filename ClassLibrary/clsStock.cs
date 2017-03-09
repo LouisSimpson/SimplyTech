@@ -107,7 +107,7 @@ namespace ClassLibrary
         {
 
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@StockID", StockID);
+            DB.AddParameter("@StockID", stockID);
             DB.Execute("sproc_Stock_FilterByStockID");
 
             if (DB.Count == 1)
@@ -130,8 +130,10 @@ namespace ClassLibrary
             
         }
 
-        /*public bool ValidExists(string ItemName, string stockDescription, int stockLevel, int stockPrice)
+        public bool ValidExists(string ItemName, string stockDescription, int stockLevel, int stockPrice)
         {
+
+
             Boolean OK = true;
 
             if (ItemName.Length == 0)
@@ -139,54 +141,58 @@ namespace ClassLibrary
                 OK = false;
             }
 
-            if(ItemName.Length > 50)
+            if (ItemName.Length > 50)
             {
                 OK = false;
             }
 
-            if (StockDescription.Length == 0)
-            {
-
-                OK = false;   
-
-            }
-
-            if (StockDescription.Length > 50)
-            {
-                OK = false;
-            }
-
-            if (StockLevel == -1)
+            if (stockDescription.Length == 0)
             {
 
                 OK = false;
 
             }
-
-            if (StockLevel > 100)
-            {
-                OK = false;
-            }
-
-            if (StockPrice == -1)
-            {
-
-                OK = false;
-
-            }
-
-            if (StockPrice > 100)
-            {
-                OK = false;
-            }
-
-
-
-
-
-
             return OK;
-        }*/
+        }
+
+        
+
+        /*if (stockDescription.Length > 50)
+        {
+            OK = false;
+        }
+
+        if (stockLevel == -1)
+        {
+
+            OK = false;
+
+        }
+
+        if (stockLevel > 100)
+        {
+            OK = false;
+        }
+
+        if (stockPrice == -1)
+        {
+
+            OK = false;
+
+        }
+
+        if (stockPrice > 100)
+        {
+            OK = false;
+        }
+
+
+
+
+
+
+        return OK;
+    }*/
 
         public bool valid5(int v)
         {
