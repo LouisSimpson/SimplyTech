@@ -91,9 +91,9 @@ namespace TestFramework
             clsOrder AnOrder = new clsOrder();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 OrderNo = 10;
+            Int32 OrderNo = 1;
             Found = AnOrder.Find(OrderNo);
-            if (AnOrder.OrderNo != 10)
+            if (AnOrder.OrderNo != 1)
             {
                 OK = false;
             }
@@ -107,10 +107,10 @@ namespace TestFramework
             clsOrder AnOrder = new clsOrder();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 OrderNo = 10;
+            Int32 OrderNo = 1;
             Found = AnOrder.Find(OrderNo);
-            if (AnOrder.DateOrdered !=Convert.ToDateTime("23/02/2017"))
-            { 
+            if (AnOrder.DateOrdered != Convert.ToDateTime("09/03/2017"))
+            {
                 OK = false;
             }
             Assert.IsTrue(OK);
@@ -122,9 +122,9 @@ namespace TestFramework
             clsOrder AnOrder = new clsOrder();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 OrderNo = 10;
+            Int32 OrderNo = 1;
             Found = AnOrder.Find(OrderNo);
-            if (AnOrder.OrderPrice!= 10.00)
+            if (AnOrder.OrderPrice != 50.00)
             {
                 OK = false;
             }
@@ -137,24 +137,24 @@ namespace TestFramework
             clsOrder AnOrder = new clsOrder();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 OrderNo = 10;
+            Int32 OrderNo = 1;
             Found = AnOrder.Find(OrderNo);
-            if (AnOrder.ProductName != "HP Compaq Elite")
+            if (AnOrder.ProductName != "HP Compaq Elite 8300")
             {
                 OK = false;
             }
             Assert.IsTrue(OK);
         }
         [TestMethod]
-        public void TestProductQuantityFound()
+        public void TestProductQuantityNoFound()
         {
             //Create instance of the class we want to create
             clsOrder AnOrder = new clsOrder();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 OrderNo = 10;
+            Int32 OrderNo = 1;
             Found = AnOrder.Find(OrderNo);
-            if (AnOrder.QuantityNo != 10)
+            if (AnOrder.QuantityNo != 1)
             {
                 OK = false;
             }
@@ -166,63 +166,44 @@ namespace TestFramework
 
 
 
-
-
-
-
-
         [TestMethod]
-        public void ValidExistsOrderNumber()
+        public void ValidMethodOK()
         {
             //Create instance of the class we want to create
             clsOrder AnOrder = new clsOrder();
             //Boolean to store result of validation
             Boolean OK = false;
-            //create test to assign to property
-            Int32 SomeOrder = 1;
+            //create test data to pass the method
+            int OrderNo = 1;
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 50;
             //invoke method
-            OK = AnOrder.Valid(SomeOrder);
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
             //test to see result is correct
             Assert.IsTrue(OK);
-
         }
         [TestMethod]
-        public void ValidExistsDateOrdered()
+        public void OrderNoMinLessOne()
         {
             //Create instance of the class we want to create
             clsOrder AnOrder = new clsOrder();
-            Boolean OK;
-            OK = AnOrder.Valid2(DateTime.Now.Date);
-            Assert.IsTrue(OK);
-
-        }
-        [TestMethod]
-        public void ValidExistsOrderPrice()
-        {
-            //Create instance of the class we want to create
-            clsOrder AnOrder = new clsOrder();
-            Boolean OK;
-            OK = AnOrder.Valid3(10.00);
-            Assert.IsTrue(OK);
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 0; //should trigger an error
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 50;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsFalse(OK);
         }
 
-        [TestMethod]
-        public void ValidExistsProductName()
-        {
-            //Create instance of the class we want to create
-            clsOrder AnOrder = new clsOrder();
-            Boolean OK;
-            OK = AnOrder.Valid4("HP Compaq Elite 8300");
-            Assert.IsTrue(OK);
-        }
-        [TestMethod]
-        public void ValidExistsProductQuantity()
-        {
-            //Create instance of the class we want to create
-            clsOrder AnOrder = new clsOrder();
-            Boolean OK;
-            OK = AnOrder.Valid5(1);
-            Assert.IsTrue(OK);
-        }
+
     }
 }
+

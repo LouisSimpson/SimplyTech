@@ -53,7 +53,7 @@ namespace clslibrary
             }
             set
             {
-                mOrderPrice= value;
+                mOrderPrice = value;
             }
         }
         public string ProductName
@@ -78,54 +78,49 @@ namespace clslibrary
                 mQuantityNo = value;
             }
         }
-    
 
 
-        
-       
-public bool Find(int OrderNo)
+
+
+
+        public bool Find(int OrderNo)
         {
-            mDateOrdered = Convert.ToDateTime("23/02/2017");
-            mOrderNo = 10;
-            mOrderPrice = 10.00;
-            mProductName = "HP Compaq Elite";
-            mQuantityNo = 10;
-            return true;
-        }
-
-        public bool Valid(int someOrder)
-        {
-            if (someOrder != 0)
+            //CREATE AN INSTANCE OF THE DATA CONNECTION
+            clsDataConnection DB = new clsDataConnection();
+            //add parameter for orderNo to search for
+            DB.AddParameter("@OrderNo", OrderNo);
+            //execute stored procedure
+            DB.Execute("sproc_tblOrder_FilterByOrderNo");
+            //if one record is found should be either one or zero
+            if (DB.Count == 1)
             {
+                mOrderNo = Convert.ToInt32(DB.DataTable.Rows[0]["OrderNo"]);
+                mDateOrdered = Convert.ToDateTime(DB.DataTable.Rows[0]["DateOrdered"]);
+                mProductName = Convert.ToString(DB.DataTable.Rows[0]["ProductName"]);
+                mQuantityNo = Convert.ToInt32(DB.DataTable.Rows[0]["QuantityNo"]);
+                mOrderPrice = Convert.ToDouble(DB.DataTable.Rows[0]["OrderPrice"]);
+                //return that it worked OK
                 return true;
+
             }
+            //if no record found
             else
             {
+                //return false
                 return false;
             }
+        }
+
+        public bool Valid(int orderNo, string dateOrdered, string productName, int quantityNo, double orderPrice)
+        {
+            //create boolean variable to flag error
+            Boolean OK = true;
+            //if Order number is 0/blank
+            if (orderNo == 0)
+            {
+                OK = false;
             }
-
-        public bool Valid2(DateTime date)
-        {
-            return true;
-        }
-
-        public bool Valid3(double v)
-        {
-            return true;
-        }
-
-        public bool Valid4(string v)
-        {
-            return true;
-        }
-
-        public bool Valid5(int v)
-        {
-            return true;
+            return OK;
         }
     }
-        
-
-      
-    }
+}
