@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary;
-
+//version 1.0
 namespace TestFramework
 {
     [TestClass]
