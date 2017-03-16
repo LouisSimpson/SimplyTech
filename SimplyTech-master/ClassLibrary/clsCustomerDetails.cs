@@ -9,6 +9,7 @@ namespace ClassLibrary
         public int customerid { get; set; }
         public string ExpiryDate { get; set; }
         public string firstname { get; set; }
+        public string lastname { get; set; }
         public string SecurityCode { get; set; }
         public string SortCode { get; set; }
 
