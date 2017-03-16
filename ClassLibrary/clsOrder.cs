@@ -34,6 +34,8 @@ namespace clslibrary
             }
         }
 
+        public DateTime DateTemp { get; private set; }
+
         public Int32 OrderNo
         {
             get
@@ -120,6 +122,26 @@ namespace clslibrary
             {
                 OK = false;
             }
+            //if orderno greater than 6 characters
+            if (orderNo == 111111)
+            {
+                OK = false;
+            }
+
+            //copy the dateordered value to datetemp variable
+            DateTemp = Convert.ToDateTime(dateOrdered);
+            //check to see if the date is less than todays date
+            if (DateTemp < DateTime.Now.Date)
+            {
+                OK = false;
+            }
+         
+            //check to see if the date is greater than todays date
+            if (DateTemp > DateTime.Now.Date)
+            {
+                OK = false;
+            }
+            //return value of ok
             return OK;
         }
     }
