@@ -7,8 +7,11 @@ namespace ClassLibrary
         public string AccountNumber { get; set; }
         public string CardNumber { get; set; }
         public int customerid { get; set; }
+        public string emailaddress { get; set; }
         public string ExpiryDate { get; set; }
         public string firstname { get; set; }
+        public string lastname { get; set; }
+        public string mobilenumber { get; set; }
         public string SecurityCode { get; set; }
         public string SortCode { get; set; }
 

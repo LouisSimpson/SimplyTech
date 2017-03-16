@@ -47,23 +47,45 @@ namespace MyTestFrame
             clsCustomerDetails NewPage = new clsCustomerDetails();
             Assert.IsNotNull(NewPage);
         }
-        [TestMethod]
+    }
+    [TestMethod]
+    public void CustomerID()
+    {
+        //create an instance of the class we want to create
+        clsCustomerDetails CustomerID = new clsCustomerDetails();
+        //create some test data to assign to the property
+        Int32 SomeNumber;
+        SomeNumber = 475;
+        //assign the data to the property
+        CustomerID.customerid = SomeNumber;
+        //test to see that the two values are the same
+        Assert.AreEqual(SomeNumber, CustomerID.customerid);
+    }
+    [TestMethod]
         public void FirstName()
         {
-            clsCustomerDetails TestFirstName = new clsCustomerDetails();
-            string SomeName = "Jonathan";
-            TestFirstName.firstname = SomeName;
+        //create an instance of the class we want to create
+        clsCustomerDetails TestFirstName = new clsCustomerDetails();
+        //create some test data to assign to the property
+        string SomeName = "Jonathan";
+        //assign the data to the property
+        TestFirstName.firstname = SomeName;
+        //test to see that the two values are the same
             Assert.AreEqual(SomeName, TestFirstName.firstname);
         }
-        [TestMethod]
-        public void CustomerID()
+    [TestMethod]
+        public void LastName()
         {
-            clsCustomerDetails CustomerID = new clsCustomerDetails();
-            Int32 SomeNumber;
-            SomeNumber = 475;
-            CustomerID.customerid = SomeNumber;
-            Assert.AreEqual(SomeNumber, CustomerID.customerid);
-        }
+        //create an instance of the class we want to create
+        clsCustomerDetails TestLastName = new clsCustomerDetails();
+        //create some test data to assign to the property
+        string SomeName = "Smith";
+        //assign the data to the property
+        TestLastName.lastname = SomeName;
+        //test to see that the two values are the same
+        Assert.AreEqual(SomeName, TestLastName.lastname);
+
+    }
         [TestMethod]
         public void Valid()
         {
@@ -261,4 +283,5 @@ namespace MyTestFrame
             }
         }
     }
+
 }
