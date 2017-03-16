@@ -152,15 +152,16 @@ namespace ClassLibrary
                 OK = false;
 
             }
-            return OK;
-        }
+
+            if (stockDescription.Length > 50)
+            {
+                OK = false;
+            }
+            
 
         
 
-        /*if (stockDescription.Length > 50)
-        {
-            OK = false;
-        }
+        
 
         if (stockLevel == -1)
         {
@@ -181,7 +182,7 @@ namespace ClassLibrary
 
         }
 
-        if (stockPrice > 100)
+        if (stockPrice > 10000)
         {
             OK = false;
         }
@@ -191,8 +192,9 @@ namespace ClassLibrary
 
 
 
+
         return OK;
-    }*/
+    }
 
         public bool valid5(int v)
         {
