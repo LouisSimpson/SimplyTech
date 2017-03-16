@@ -184,6 +184,10 @@ namespace TestFramework
             //test to see result is correct
             Assert.IsTrue(OK);
         }
+
+        //ORDERNO PARAMETERS
+
+
         [TestMethod]
         public void OrderNoMinLessOne()
         {
@@ -202,7 +206,209 @@ namespace TestFramework
             //test to see result is correct
             Assert.IsFalse(OK);
         }
+        [TestMethod]
+        public void OrderNoMin()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 1; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 50;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
 
+        [TestMethod]
+        public void OrderNoMinPlusOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 11; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 50;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void OrderNoMaxLessOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 11111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 50;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+
+  
+
+        [TestMethod]
+        public void OrderNoMid()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 50;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+
+        //DATEORDERED PARAMETERS
+
+        [TestMethod]
+        public void DateOrderedExtremeMin()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 50;
+            //create variable to store test date data
+            DateTime TestDate;
+            //set date to todays date
+            TestDate = DateTime.Now.Date;
+            //change date to less than 100 years
+            TestDate = TestDate.AddYears(-100);
+            //convert the date variable to string variable
+            string DateOrdered = TestDate.ToString();
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsFalse(OK);
+        }
+        [TestMethod]
+        public void DateOrderedMinLessOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 50;
+            //create variable to store test date data
+            DateTime TestDate;
+            //set date to todays date
+            TestDate = DateTime.Now.Date;
+            //change date to less than 100 years
+            TestDate = TestDate.AddDays(-1);
+            //convert the date variable to string variable
+            string DateOrdered = TestDate.ToString();
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsFalse(OK);
+        }
+        [TestMethod]
+        public void DateOrderedMin()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 50;
+            //create variable to store test date data
+            DateTime TestDate;
+            //set date to todays date
+            TestDate = DateTime.Now.Date;
+            //convert the date variable to string variable
+            string DateOrdered = TestDate.ToString();
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void DateOrderedMinPlusOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 50;
+            //create variable to store test date data
+            DateTime TestDate;
+            //set date to todays date
+            TestDate = DateTime.Now.Date;
+            //change date to date plus one
+            TestDate = TestDate.AddDays(1);
+            //convert the date variable to string variable
+            string DateOrdered = TestDate.ToString();
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsFalse(OK);
+        }
+        [TestMethod]
+        public void DateOrderedExtremeMax()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 50;
+            //create variable to store test date data
+            DateTime TestDate;
+            //set date to todays date
+            TestDate = DateTime.Now.Date;
+            //change date to plus than 100 years
+            TestDate = TestDate.AddYears(100);
+            //convert the date variable to string variable
+            string DateOrdered = TestDate.ToString();
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsFalse(OK);
+        }
 
     }
 }
