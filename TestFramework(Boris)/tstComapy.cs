@@ -1,12 +1,12 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ClassLibrary;
 
 namespace ClassLibrary
 {
     [TestClass]
     public class tstCompany
     {
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -18,7 +18,7 @@ namespace ClassLibrary
         public void CompanyNameOK()
         {
             clsCompany ACompany = new clsCompany();
-            string TestData = "Borislav";
+            string TestData = "DMU";
             ACompany.CompanyName = TestData;
             Assert.AreEqual(ACompany.CompanyName, TestData);
         }
@@ -59,30 +59,36 @@ namespace ClassLibrary
 
         }
 
-
-
-        //[TestMethod]
-        //public void TestAddressFound()
-        //{
-        //    clsCompany ACompany = new clsCompany();
-        //    Boolean Found = false;
-        //    Boolean OK = true;
-        //    string Address = "33";
-        //    Found = ACompany.Find(Address);
-        //    if (ACompany.Address != "33")
-        //    {
-        //        OK = false;
-        //    }
-        //    Assert.IsTrue(OK);
-        //}
-
-        public bool Find(int Address)
+        [TestMethod]
+        public void FindMethodOK()
         {
-            Address = 33;
-            return true;
+            clsCompany ACompany = new clsCompany();
+            Boolean Found = false;
+            int ContactNo = 33;
+            Found = ACompany.Find(ContactNo);
+            Assert.IsTrue(Found);
+
         }
+
+        [TestMethod]
+        public void TestContactNoFound()
+        {
+            clsCompany ACompany = new clsCompany();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ContactNo = 33;
+            Found = ACompany.Find(ContactNo);
+            if (ACompany.ContactNo != 33)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+
+        }
+
+
 
     }
 
-
 }
+

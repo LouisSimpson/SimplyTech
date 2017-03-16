@@ -1,34 +1,36 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using ClassLibrary;
-
 namespace ClassLibrary
 {
     public class clsCompany
     {
+
+        public string Address { get; set; }
         public string CompanyName { get; set; }
         public int CompanyNo { get; set; }
-        public int ContactNo { get; set; }
-        public string Email { get; set; }
 
-        private string mAddress;
-        public string Address
+        private int mContactNo;
+        public int ContactNo
         {
             get
             {
-                return mAddress;
+                return mContactNo;
             }
             set
             {
-                mAddress = value;
+                mContactNo = value;
             }
         }
-        public bool Find(string Address)
+
+        public string Email { get; set; }
+
+        public bool Find(int contactNo)
         {
+            mContactNo = 33;
             return true;
-        }
-        public class tstCompany
-        {
-            private string Address;
         }
     }
 }
