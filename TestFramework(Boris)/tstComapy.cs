@@ -22,14 +22,7 @@ namespace ClassLibrary
             ACompany.CompanyName = TestData;
             Assert.AreEqual(ACompany.CompanyName, TestData);
         }
-        [TestMethod]
-        public void CompanyNoOK()
-        {
-            clsCompany ACompany = new clsCompany();
-            int TestData = 33;
-            ACompany.CompanyNo = TestData;
-            Assert.AreEqual(ACompany.CompanyNo, TestData);
-        }
+
 
         [TestMethod]
         public void AddressOK()
@@ -86,6 +79,54 @@ namespace ClassLibrary
 
         }
 
+
+        [TestMethod]
+        public void TestEmailFound()
+        {
+            clsCompany ACompany = new clsCompany();
+            Boolean Found = false;
+            Boolean OK = true;
+            string Email = "abcdef@dmu.ac.uk";
+            Found = ACompany.Find(33);
+            if (ACompany.Email == "abcdef@dmu.ac.uk")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestAddressFound()
+        {
+            clsCompany ACompany = new clsCompany();
+            Boolean Found = false;
+            Boolean OK = true;
+            //string mAddress = "85 Street";
+            Found = ACompany.Find(33);
+            if (ACompany.Address == "85 Street")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestCompanyNameFound()
+        {
+            clsCompany ACompany = new clsCompany();
+            Boolean Found = false;
+            Boolean OK = true;
+            //string CompanyName = "DMU";
+            Found = ACompany.Find(33);
+            if (ACompany.CompanyName == "DMU")
+            {
+                OK = true;
+            }
+            Assert.IsTrue(OK);
+
+        }
 
 
     }

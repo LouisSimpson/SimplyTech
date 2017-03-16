@@ -8,9 +8,34 @@ namespace ClassLibrary
     public class clsCompany
     {
 
-        public string Address { get; set; }
-        public string CompanyName { get; set; }
-        public int CompanyNo { get; set; }
+        private string mAddress;
+        public string Address
+        {
+            get
+            {
+                return mAddress;
+            }
+            set
+            {
+                mAddress = value;
+            }
+        }
+
+
+        private string mCompanyName;
+        public string CompanyName
+        {
+            get
+            {
+                return mCompanyName;
+            }
+            set
+            {
+                mCompanyName = value;
+            }
+        }
+
+
 
         private int mContactNo;
         public int ContactNo
@@ -25,7 +50,18 @@ namespace ClassLibrary
             }
         }
 
-        public string Email { get; set; }
+        private string mEmail;
+        public string Email
+        {
+            get
+            {
+                return mEmail;
+            }
+            set
+            {
+                mEmail = value;
+            }
+        }
 
         public bool Find(int contactNo)
         {
