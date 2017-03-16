@@ -69,7 +69,7 @@ namespace TestFramework
              string ItemName = "GTX1080";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -82,7 +82,7 @@ namespace TestFramework
              string ItemName = "";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsFalse(OK);
          }
@@ -95,7 +95,7 @@ namespace TestFramework
              string ItemName = "G";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -108,7 +108,7 @@ namespace TestFramework
              string ItemName = "GT";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -121,7 +121,7 @@ namespace TestFramework
              string ItemName = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtg";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -134,7 +134,7 @@ namespace TestFramework
              string ItemName = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgt";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -147,7 +147,7 @@ namespace TestFramework
              string ItemName = "gtgtgtgtgtgtgtgtgtgtgtgtg";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -160,7 +160,7 @@ namespace TestFramework
              string ItemName = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtg";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsFalse(OK);
          }
@@ -174,7 +174,7 @@ namespace TestFramework
              ItemName = ItemName.PadRight(1000, 'a');
              string StockDescription = "Nvidia GPU";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsFalse(OK);
          }
@@ -187,12 +187,12 @@ namespace TestFramework
              string ItemName = "GTX1080";
              string StockDescription = "";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsFalse(OK);
          }
 
-         /*[TestMethod]
+         [TestMethod]
          public void StockDescriptionMin()
          {
              clsStock TestStock = new clsStock();
@@ -200,7 +200,7 @@ namespace TestFramework
              string ItemName = "GTX 1080";
              string StockDescription = "AMD GPU";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -213,7 +213,7 @@ namespace TestFramework
              string ItemName = "GTx 1080";
              string StockDescription = "Nvidia GPUA";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -224,9 +224,10 @@ namespace TestFramework
              clsStock TestStock = new clsStock();
              Boolean OK = false;
              string ItemName = "GTX 1080";
-             string StockDescription = "ababababababababababababababababababababababababa";
+             string StockDescription = "";
+            StockDescription = StockDescription.PadLeft(49, 'a');
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -239,7 +240,7 @@ namespace TestFramework
              string ItemName = "GTX 1080";
              string StockDescription = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgt";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -252,7 +253,7 @@ namespace TestFramework
              string ItemName = "GTX1080";
              string StockDescription = "gtgtgtgtgtgtgtgtgtgtgtgtg";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -265,7 +266,7 @@ namespace TestFramework
              string ItemName = "GTX 1080";
              string StockDescription = "gtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtgtg";
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsFalse(OK);
          }
@@ -279,7 +280,7 @@ namespace TestFramework
              string StockDescription = "";
              StockDescription = StockDescription.PadRight(1000, 'a');
              int StockLevel = 2;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsFalse(OK);
          }
@@ -292,7 +293,7 @@ namespace TestFramework
              string ItemName = "GTX1080";
              string StockDescription = "Nvidia GPU";
              int StockLevel = -1;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsFalse(OK);
          }
@@ -305,7 +306,7 @@ namespace TestFramework
              string ItemName = "GTX 1080";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 0;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -318,7 +319,7 @@ namespace TestFramework
              string ItemName = "GTX 1080";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 1;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -331,7 +332,7 @@ namespace TestFramework
              string ItemName = "GTX 1080";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 99;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -344,7 +345,7 @@ namespace TestFramework
              string ItemName = "GTX 1080";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 100;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -357,7 +358,7 @@ namespace TestFramework
              string ItemName = "GTX1080";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 50;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsTrue(OK);
          }
@@ -370,7 +371,7 @@ namespace TestFramework
              string ItemName = "GTX 1080";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 101;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsFalse(OK);
          }
@@ -383,7 +384,7 @@ namespace TestFramework
              string ItemName = "GTX 1080";
              string StockDescription = "Nvidia GPU";
              int StockLevel = 2000;
-             int StockPrice = 400;
+             int StockPrice = 100;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsFalse(OK);
          }
@@ -490,7 +491,7 @@ namespace TestFramework
              int StockPrice = 1000000;
              OK = TestStock.ValidExists(ItemName, StockDescription, StockLevel, StockPrice);
              Assert.IsFalse(OK);
-         }*/
+         }
 
 
 
