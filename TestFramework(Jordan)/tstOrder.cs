@@ -185,7 +185,7 @@ namespace TestFramework
             Assert.IsTrue(OK);
         }
 
-        //ORDERNO PARAMETERS
+        //ORDERNO PARAMETERS //ORDERNO PARAMETERS   //ORDERNO PARAMETERS    //ORDERNO PARAMETERS    //ORDERNO PARAMETERS    //ORDERNO PARAMETERS    //ORDERNO PARAMETERS
 
 
         [TestMethod]
@@ -284,7 +284,7 @@ namespace TestFramework
             Assert.IsTrue(OK);
         }
 
-        //DATEORDERED PARAMETERS
+        //DATEORDERED PARAMETERS  //DATEORDERED PARAMETERS   //DATEORDERED PARAMETERS    //DATEORDERED PARAMETERS    //DATEORDERED PARAMETERS    //DATEORDERED PARAMETERS    //DATEORDERED PARAMETERS
 
         [TestMethod]
         public void DateOrderedExtremeMin()
@@ -410,6 +410,384 @@ namespace TestFramework
             Assert.IsFalse(OK);
         }
 
+        //OrderPrice    //OrderPrice    //OrderPrice    //OrderPrice   //OrderPrice    //OrderPrice    //OrderPrice    //OrderPrice    //OrderPrice
+
+        [TestMethod]
+        public void OrderPriceMinLessOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 0;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsFalse(OK);
+        }
+
+        [TestMethod]
+        public void OrderPriceMin()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void OrderPriceMinPlusOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void OrderPriceMaxLessOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 9999;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void OrderPriceMax()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 10000;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void OrderPriceMaxPlusOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 10001;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsFalse(OK);
+        }
+
+        [TestMethod]
+        public void OrderPriceMid()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "Some Product";
+            int QuantityNo = 1;
+            double OrderPrice = 5000;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+        //PRODUCTNAME           //PRODUCTNAME           //PRODUCTNAME           //PRODUCTNAME           //PRODUCTNAME           //PRODUCTNAME
+
+
+        [TestMethod]
+        public void ProductNameMinLessOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "aa";
+            int QuantityNo = 1;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsFalse(OK);
+        }
+        [TestMethod]
+        public void ProductNameMin()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "aaa";
+            int QuantityNo = 1;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void ProductNameMinPlusOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "aaaa";
+            int QuantityNo = 1;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void ProductNameMaxLessOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "";
+            ProductName = ProductName.PadRight(29, 'a');
+            int QuantityNo = 1;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ProductNameMax()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "";
+            ProductName = ProductName.PadRight(30, 'a');
+            int QuantityNo = 1;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ProductNameMaxPlusOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "";
+            ProductName = ProductName.PadRight(31, 'a');
+            int QuantityNo = 1;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsFalse(OK);
+        }
+        //QUANTITY  //QUANTITY  //QUANTITY  //QUANTITY  //QUANTITY  //QUANTITY  //QUANTITY  //QUANTITY  //QUANTITY  //QUANTITY
+
+        [TestMethod]
+        public void QuantityMinLessOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "aaaa";
+            int QuantityNo = 0;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsFalse(OK);
+        }
+        [TestMethod]
+        public void QuantityMin()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "aaaa";
+            int QuantityNo = 1;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void QuantityMinPlusOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "aaaa";
+            int QuantityNo = 2;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void QuantityMaxLessOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "aaaa";
+            int QuantityNo = 9;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void QuantityMax()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "aaaa";
+            int QuantityNo = 10;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void QuantityMaxPlusOne()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "aaaa";
+            int QuantityNo = 11;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsFalse(OK);
+        }
+        [TestMethod]
+        public void QuantityMid()
+        {
+            //Create instance of the class we want to create
+            clsOrder AnOrder = new clsOrder();
+            //Boolean to store result of validation
+            Boolean OK = false;
+            //create test data to pass the method
+            int OrderNo = 111; //should be ok
+            string DateOrdered = DateTime.Now.Date.ToString();
+            string ProductName = "aa";
+            int QuantityNo = 5;
+            double OrderPrice = 1;
+            //invoke method
+            OK = AnOrder.Valid(OrderNo, DateOrdered, ProductName, QuantityNo, OrderPrice);
+            //test to see result is correct
+            Assert.IsTrue(OK);
+        }
     }
 }
 
