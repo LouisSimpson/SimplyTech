@@ -141,8 +141,43 @@ namespace clslibrary
             {
                 OK = false;
             }
+
+            //if price is blank return false
+            if (orderPrice == 0 )
+            {
+                OK = false;
+            }
+            
+          //if price greater than 10001 digits return false
+          if (orderPrice == 10001)
+            {
+                OK = false;
+            }
+          //if product name blank
+          if (productName.Length == 0)
+            {
+                OK = false;
+            }
+          //if productname too long
+          if (productName.Length > 30)
+            {
+                OK = false;
+            }
+            
+          //if quantity is blank
+          if (quantityNo == 0)
+            {
+                OK = false;
+            }
+          //if greater than 10
+          if (quantityNo == 11)
+            {
+                OK = false;
+            }
+         
             //return value of ok
             return OK;
         }
+
     }
 }
