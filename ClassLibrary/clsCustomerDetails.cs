@@ -4,16 +4,20 @@ namespace ClassLibrary
 {
     public class clsCustomerDetails
     {
-        public string AccountNumber { get; set; }
-        public string CardNumber { get; set; }
+        public string accountnumber { get; set; }
+        public string cardnumber { get; set; }
+        public string cityname { get; set; }
         public int customerid { get; set; }
+        public string doornumber { get; set; }
         public string emailaddress { get; set; }
-        public string ExpiryDate { get; set; }
+        public string expirydate { get; set; }
         public string firstname { get; set; }
         public string lastname { get; set; }
         public string mobilenumber { get; set; }
-        public string SecurityCode { get; set; }
-        public string SortCode { get; set; }
+        public string postcode { get; set; }
+        public string securitycode { get; set; }
+        public string sortcode { get; set; }
+        public string streetname { get; set; }
 
         public bool Valid(int houseNumber, string firstName)
         {

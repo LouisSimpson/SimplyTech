@@ -77,9 +77,6 @@ namespace MyTestFramework
             Assert.AreEqual(TestStaff.FirstName, TestData);
 
         }
-
-        
-
         // in this method staff Id is checked
         // staff id must be eqaul to 1 to be valid
         // otherwise the valid() method will return false;

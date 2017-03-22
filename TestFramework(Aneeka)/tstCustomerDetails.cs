@@ -49,6 +49,7 @@ namespace MyTestFrame
             clsCustomerDetails NewPage = new clsCustomerDetails();
             Assert.IsNotNull(NewPage);
         }
+        //the following are my tests for customer details 
         [TestMethod]
         public void CustomerID()
         {
@@ -105,85 +106,121 @@ namespace MyTestFrame
         public void CardNumber()
         {
             //instance of the class
-            clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+            clsCustomerDetails TestCardNumber = new clsCustomerDetails();
             //create some test data to assign to the property 
             string SomeData = "0236562385697459";
             //assign the data to the property
-            CustomerDetails.CardNumber = SomeData;
+            TestCardNumber.cardnumber = SomeData;
             //test to see that the two values are the same 
-            Assert.AreEqual(CustomerDetails.CardNumber, SomeData);
+            Assert.AreEqual(TestCardNumber.cardnumber, SomeData);
         }
         [TestMethod]
         public void AccountNumber()
         {
             //instance of the class
-            clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+            clsCustomerDetails TestAccountNumber = new clsCustomerDetails();
             //create some test data to assign to the property 
             string SomeData = "00856324";
             //assign the data to the property
-            CustomerDetails.AccountNumber = SomeData;
+            TestAccountNumber.accountnumber = SomeData;
             //test to see that the two values are the same 
-            Assert.AreEqual(CustomerDetails.AccountNumber, SomeData);
+            Assert.AreEqual(TestAccountNumber.accountnumber, SomeData);
         }
         [TestMethod]
         public void SortCode()
         {
             //instance of the class
-            clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+            clsCustomerDetails TestSortCode = new clsCustomerDetails();
             //create some test data to assign to the property 
             string SomeData = "004853";
             //assign the data to the property
-            CustomerDetails.SortCode = SomeData;
+            TestSortCode.sortcode = SomeData;
             //test to see that the two values are the same 
-            Assert.AreEqual(CustomerDetails.SortCode, SomeData);
+            Assert.AreEqual(TestSortCode.sortcode, SomeData);
         }
         [TestMethod]
         public void SecurityCode()
         {
             //instance of the class
-            clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+            clsCustomerDetails TestSecurityCode = new clsCustomerDetails();
             //create some test data to assign to the property 
             string SomeData = "458";
             //assign the data to the property
-            CustomerDetails.SecurityCode = SomeData;
+            TestSecurityCode.securitycode = SomeData;
             //test to see that the two values are the same 
-            Assert.AreEqual(CustomerDetails.SecurityCode, SomeData);
+            Assert.AreEqual(TestSecurityCode.securitycode, SomeData);
         }
         [TestMethod]
         public void ExpiryDate()
         {
             //instance of the class
-            clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+            clsCustomerDetails TestExpiryDate = new clsCustomerDetails();
             //create some test data to assign to the property 
             string SomeData = "11/06";
             //assign the data to the property
-            CustomerDetails.ExpiryDate = SomeData;
+            TestExpiryDate.expirydate = SomeData;
             //test to see that the two values are the same 
-            Assert.AreEqual(CustomerDetails.ExpiryDate, SomeData);
+            Assert.AreEqual(TestExpiryDate.expirydate, SomeData);
         }
         [TestMethod]
         public void MobileNumber()
         {
             //instance of the class
-            clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+            clsCustomerDetails TestMobileNumber = new clsCustomerDetails();
             //create some test data to assign to the property 
             string SomeData = "07701343822";
             //assign the data to the property
-            CustomerDetails.mobilenumber = SomeData;
+            TestMobileNumber.mobilenumber = SomeData;
             //test to see that the two values are the same 
-            Assert.AreEqual(CustomerDetails.mobilenumber, SomeData);
+            Assert.AreEqual(TestMobileNumber.mobilenumber, SomeData);
         }
         [TestMethod]
         public void AddressDoorNumber()
         {
             //instance of the class
-            clsCustomerDetails CustomerDetails = new clsCustomerDetails();
+            clsCustomerDetails TestAddressDoorNumber = new clsCustomerDetails();
             //create some test data to assign to the property 
-            string SomeData = "07701343822";
+            string SomeData = "460";
             //assign the data to the property
-            CustomerDetails.mobilenumber = SomeData;
+            TestAddressDoorNumber.doornumber = SomeData;
             //test to see that the two values are the same 
-            Assert.AreEqual(CustomerDetails.mobilenumber, SomeData);
+            Assert.AreEqual(TestAddressDoorNumber.doornumber, SomeData);
+        }
+        [TestMethod]
+        public void AddressStreetName()
+        {
+            //instance of the class
+            clsCustomerDetails TestAddressStreetName = new clsCustomerDetails();
+            //create some test data to assign to the property 
+            string SomeData = "smith field drive";
+            //assign the data to the property
+            TestAddressStreetName.streetname = SomeData;
+            //test to see that the two values are the same 
+            Assert.AreEqual(TestAddressStreetName.streetname, SomeData);
+        }
+        [TestMethod]
+        public void AddressCityName()
+        {
+            //instance of the class
+            clsCustomerDetails TestAddressCityName = new clsCustomerDetails();
+            //create some test data to assign to the property 
+            string SomeData = "Leicester";
+            //assign the data to the property
+            TestAddressCityName.cityname= SomeData;
+            //test to see that the two values are the same 
+            Assert.AreEqual(TestAddressCityName.cityname, SomeData);
+        }
+        [TestMethod]
+        public void AddressPostCode()
+        {
+            //instance of the class
+            clsCustomerDetails TestAddressPostCode = new clsCustomerDetails();
+            //create some test data to assign to the property 
+            string SomeData = "LE4 7UH";
+            //assign the data to the property
+            TestAddressPostCode.postcode = SomeData;
+            //test to see that the two values are the same 
+            Assert.AreEqual(TestAddressPostCode.postcode, SomeData);
         }
         [TestMethod]
         public void Valid()
@@ -307,77 +344,6 @@ namespace MyTestFrame
             Ok = TestHouseNumber.Valid(HouseNumber, FirstName);
             Assert.IsFalse(Ok);
         }
-        [TestClass]
-        public class tstCustomer
-        {
-            [TestMethod]
-            public void InstanceOk()
-            {
-                //instance of the class
-                clsCustomerDetails CustomerDetails = new clsCustomerDetails();
-                //create some test data to assign to the property 
-                Assert.IsNotNull(CustomerDetails);
-            }
-            [TestMethod]
-            public void CardNumber()
-            {
-                //instance of the class
-                clsCustomerDetails CustomerDetails = new clsCustomerDetails();
-                //create some test data to assign to the property 
-                string TestData = "0236562385697459";
-                //assign the data to the property
-                CustomerDetails.CardNumber = TestData;
-                //test to see that the two values are the same 
-                Assert.AreEqual(CustomerDetails.CardNumber, TestData);
-            }
-            [TestMethod]
-            public void AccountNumber()
-            {
-                //instance of the class
-                clsCustomerDetails CustomerDetails = new clsCustomerDetails();
-                //create some test data to assign to the property 
-                string TestData = "00856324";
-                //assign the data to the property
-                CustomerDetails.AccountNumber = TestData;
-                //test to see that the two values are the same 
-                Assert.AreEqual(CustomerDetails.AccountNumber, TestData);
-            }
-            [TestMethod]
-            public void SortCode()
-            {
-                //instance of the class
-                clsCustomerDetails CustomerDetails = new clsCustomerDetails();
-                //create some test data to assign to the property 
-                string TestData = "004853";
-                //assign the data to the property
-                CustomerDetails.SortCode = TestData;
-                //test to see that the two values are the same 
-                Assert.AreEqual(CustomerDetails.SortCode, TestData);
-            }
-            [TestMethod]
-            public void SecurityCode()
-            {
-                //instance of the class
-                clsCustomerDetails CustomerDetails = new clsCustomerDetails();
-                //create some test data to assign to the property 
-                string TestData = "458";
-                //assign the data to the property
-                CustomerDetails.SecurityCode = TestData;
-                //test to see that the two values are the same 
-                Assert.AreEqual(CustomerDetails.SecurityCode, TestData);
-            }
-            [TestMethod]
-            public void ExpiryDate()
-            {
-                //instance of the class
-                clsCustomerDetails CustomerDetails = new clsCustomerDetails();
-                //create some test data to assign to the property 
-                string TestData = "11/06";
-                //assign the data to the property
-                CustomerDetails.ExpiryDate = TestData;
-                //test to see that the two values are the same 
-                Assert.AreEqual(CustomerDetails.ExpiryDate, TestData);
-            }
-        }
+      }
     }
 }
