@@ -113,17 +113,17 @@ namespace clslibrary
             }
         }
 
-        public bool Valid(int orderNo, string dateOrdered, string productName, int quantityNo, double orderPrice)
+        public bool Valid(string orderNo, string dateOrdered, string productName, string quantityNo, string orderPrice)
         {
             //create boolean variable to flag error
             Boolean OK = true;
             //if Order number is 0/blank
-            if (orderNo == 0)
+            if (orderNo.Length <= 0)
             {
                 OK = false;
             }
             //if orderno greater than 6 characters
-            if (orderNo == 111111)
+            if (orderNo.Length > 6)
             {
                 OK = false;
             }
@@ -142,19 +142,28 @@ namespace clslibrary
                 OK = false;
             }
 
-            //if price is blank return false
-            if (orderPrice == 0 )
+            try
+            {
+                decimal TempPrice =Convert.ToDecimal( orderPrice);
+                //if price is blank return false
+                if (TempPrice < 0)
+                {
+                    OK = false;
+                }
+
+                //if price greater than 10001 digits return false
+                if (TempPrice > 10000)
+                {
+                    OK = false;
+                }
+            }
+            catch
             {
                 OK = false;
             }
-            
-          //if price greater than 10001 digits return false
-          if (orderPrice == 10001)
-            {
-                OK = false;
-            }
+
           //if product name blank
-          if (productName.Length == 0)
+          if (productName.Length == 2)
             {
                 OK = false;
             }
@@ -163,17 +172,21 @@ namespace clslibrary
             {
                 OK = false;
             }
-            
-          //if quantity is blank
-          if (quantityNo == 0)
+
+            try
+            {
+                Int32 TempQuantity = Convert.ToInt32(quantityNo);
+                if (TempQuantity < 0)
+                {
+                    OK = false;
+                }
+            }
+            catch
             {
                 OK = false;
             }
-          //if greater than 10
-          if (quantityNo == 11)
-            {
-                OK = false;
-            }
+
+         
          
             //return value of ok
             return OK;
