@@ -19,27 +19,31 @@ namespace ClassLibrary
         public string sortcode { get; set; }
         public string streetname { get; set; }
 
-        public bool Valid(int houseNumber, string firstName)
+        public bool Valid(string accountNumber, string addressCityName, string addressDoorNumber, string addressPostCode, string addressStreetName, string cardNumber, int customerID, string emailAddress, DateTime expiryDate, string firstName, string lastName, string mobileNumber, int securityCode, string sortCode)
         {
+            //declare a variable to pass as return
+            bool OK = true;
+
+            //Account Number validation
+            if (accountNumber.Length != 8)
             {
-                //create a boolean to flag error
-                Boolean Ok = true;
-                if (firstName.Length == 0)
-                {
-                    //Set the flag to ok
-                    Ok = false;
-                }
-                if (firstName.Length > 16)
-                {
-                    //flag error
-                    Ok = false;
-                }
-                {
-                    //retuen ok
-                    return Ok;
-                }
-              }
+                OK = false;
+            }
+            //End of Account number
+            
+            //city name validation 
+            if (addressCityName.Length < 3)
+            {
+                OK = false;
+            }
+            else if (addressCityName.Length > 50)
+            {
+                OK = false;
+            }
+
+            //return variable
+            return OK;
         }
-}
+    }
 }
     
