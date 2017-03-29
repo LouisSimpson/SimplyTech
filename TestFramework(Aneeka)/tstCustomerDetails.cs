@@ -175,16 +175,16 @@ namespace MyTestFrame
             Assert.AreEqual(TestMobileNumber.mobilenumber, SomeData);
         }
         [TestMethod]
-        public void AddressDoorNumbePropertyOKr()
+        public void AddressNamePropertyOKr()
         {
             //instance of the class
-            clsCustomerDetails TestAddressDoorNumber = new clsCustomerDetails();
+            clsCustomerDetails TestAddressName = new clsCustomerDetails();
             //create some test data to assign to the property 
             string SomeData = "460";
             //assign the data to the property
-            TestAddressDoorNumber.doornumber = SomeData;
+            TestAddressName.addressName = SomeData;
             //test to see that the two values are the same 
-            Assert.AreEqual(TestAddressDoorNumber.doornumber, SomeData);
+            Assert.AreEqual(TestAddressName.addressName, SomeData);
         }
         [TestMethod]
         public void AddressStreetNamePropertyOK()
@@ -232,7 +232,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "12345678";
             string AddressCityName = "Leicester";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -245,7 +245,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsTrue(Ok);
         }
@@ -260,7 +260,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "123";
             string AddressCityName = "Leicester";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -273,7 +273,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsFalse(Ok);
         }
@@ -288,7 +288,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "1234567";
             string AddressCityName = "Leicester";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -301,7 +301,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsFalse(Ok);
         }
@@ -316,7 +316,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "12345678";
             string AddressCityName = "Leicester";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -329,7 +329,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsTrue(Ok);
         }
@@ -344,7 +344,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "123456789";
             string AddressCityName = "Leicester";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -357,7 +357,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsFalse(Ok);
         }
@@ -372,7 +372,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "12345678";
             string AddressCityName = "Leicester";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -385,7 +385,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsTrue(Ok);
         }
@@ -400,7 +400,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "1234567";
             string AddressCityName = "Leicester";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -413,7 +413,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsFalse(Ok);
         }
@@ -428,7 +428,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "12345678";
             string AddressCityName = "Leicester";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -441,7 +441,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsTrue(Ok);
         }
@@ -456,7 +456,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "123456789";
             string AddressCityName = "Leicester";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -469,7 +469,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsFalse(Ok);
         }
@@ -484,7 +484,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "123456789012";
             string AddressCityName = "Leicester";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -497,7 +497,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsFalse(Ok);
         }
@@ -511,8 +511,8 @@ namespace MyTestFrame
             Boolean Ok;
             //create some test data
             string AccountNumber = "12345678";
-            string AddressCityName = "Pan";
-            string AddressDoorNumber = "44A";
+            string AddressCityName = "P";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -525,7 +525,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsFalse(Ok);
         }
@@ -540,7 +540,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "123456789012";
             string AddressCityName = "Le";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -553,7 +553,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsFalse(Ok);
         }
@@ -565,9 +565,9 @@ namespace MyTestFrame
             //declare a variable to store the result of the validation
             Boolean Ok;
             //create some test data
-            string AccountNumber = "123456789012";
+            string AccountNumber = "12345678";
             string AddressCityName = "Lei";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -580,7 +580,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsTrue(Ok);
         }
@@ -592,9 +592,9 @@ namespace MyTestFrame
             //declare a variable to store the result of the validation
             Boolean Ok;
             //create some test data
-            string AccountNumber = "123456789012";
+            string AccountNumber = "12345678";
             string AddressCityName = "Leed";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -607,7 +607,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsTrue(Ok);
         }
@@ -619,9 +619,9 @@ namespace MyTestFrame
             //declare a variable to store the result of the validation
             Boolean Ok;
             //create some test data
-            string AccountNumber = "123456789012";
+            string AccountNumber = "12345678";
             string AddressCityName = "abcdefghijklmnopqrstuvwxyz";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -634,7 +634,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsTrue(Ok);
         }
@@ -646,9 +646,9 @@ namespace MyTestFrame
             //declare a variable to store the result of the validation
             Boolean Ok;
             //create some test data
-            string AccountNumber = "123456789012";
+            string AccountNumber = "12345678";
             string AddressCityName = "Lhunkilophnjutgfertcxsderftyuikjhngtusopledftgyhu";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -661,7 +661,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsTrue(Ok);
         }
@@ -673,9 +673,9 @@ namespace MyTestFrame
             //declare a variable to store the result of the validation
             Boolean Ok;
             //create some test data
-            string AccountNumber = "123456789012";
+            string AccountNumber = "12345678";
             string AddressCityName = "Lhunkilophnjutgfertcxsderftyuikjhngtusopledftgyhud";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -688,7 +688,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsTrue(Ok);
         }
@@ -702,7 +702,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "123456789012";
             string AddressCityName = "Lhunkilophnjutgfertcxsderftyuikjhngtusopledftgyhtud";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -715,7 +715,7 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsFalse(Ok);
         }
@@ -729,7 +729,7 @@ namespace MyTestFrame
             //create some test data
             string AccountNumber = "123456789012";
             string AddressCityName = "Lhunkilophnjutgfertcxsderftyuikjhngtusopledftgyhudgnhtfedso";
-            string AddressDoorNumber = "44A";
+            string AddressName = "44A";
             string AddressPostCode = "LE2 7GZ";
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
@@ -742,10 +742,525 @@ namespace MyTestFrame
             int SecurityCode = 454;
             string SortCode = "124596";
             //invoke the method
-            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressDoorNumber, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
             //test to see if the valid method works
             Assert.IsFalse(Ok);
         }
+
+        [TestMethod]
+        public void AddressNameExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "";
+            string AddressPostCode = "LE2 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsFalse(Ok);
+        }
+        [TestMethod]
+        public void AddressNameMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "";
+            string AddressPostCode = "LE2 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsFalse(Ok);
+        }
+        [TestMethod]
+        public void AddressNameMin()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "3";
+            string AddressPostCode = "LE2 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsTrue(Ok);
+        }
+        [TestMethod]
+        public void AddressNameMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string Addressname = "48";
+            string AddressPostCode = "LE2 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, Addressname, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsTrue(Ok);
+        }
+        [TestMethod]
+        public void AddressNameMid()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "smithhousetghbj";
+            string AddressPostCode = "LE2 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsTrue(Ok);
+        }
+        [TestMethod]
+        public void AddressNameMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "opencourthousenjmikiohdbgstyuudjuiopkmhbjnshgcjsi";
+            string AddressPostCode = "LE2 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsTrue(Ok);
+        }
+        [TestMethod]
+        public void AddressNameMax()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "opencourthousenjmikiohdbgstyuudkjuiopkmhbjnshgcjsi";
+            string AddressPostCode = "LE2 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsTrue(Ok);
+        }
+        [TestMethod]
+        public void AddressNameMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "opencourthousenjmikiohdbgstyuudkjuiopkmhbjnshgcjsij";
+            string AddressPostCode = "LE2 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsFalse(Ok);
+        }
+        [TestMethod]
+        public void AddressNameExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "opencourthousenjmikiohdbgstyuudjumikgvdfrkjuiopkmhbjnshgcjsi";
+            string AddressPostCode = "LE2 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsFalse(Ok);
+        }
+        [TestMethod]
+        public void AddressPostCodeExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "44A";
+            string AddressPostCode = "LE";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsFalse(Ok);
+        }
+        [TestMethod]
+        public void AddressPostCodeMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "44A";
+            string AddressPostCode = "LDE2 7G";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsTrue(Ok);
+        }
+        [TestMethod]
+        public void ValiAddressPostCodeMin()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "44A";
+            string AddressPostCode = "LED2 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsTrue(Ok);
+        }
+        [TestMethod]
+        public void AddressPostCodeMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "44A";
+            string AddressPostCode = "LRE2 7GZ8";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsFalse(Ok);
+        }
+        [TestMethod]
+        public void AddressPostCodeMid()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "44A";
+            string AddressPostCode = "L2 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsTrue(Ok);
+        }
+        [TestMethod]
+        public void AddressPostCodeMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "44A";
+            string AddressPostCode = "BD12 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsTrue(Ok);
+        }
+        [TestMethod]
+        public void AddressPostCodeMax()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "44A";
+            string AddressPostCode = "BD12 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsTrue(Ok);
+        }
+        [TestMethod]
+        public void AddressPostCodeMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "44A";
+            string AddressPostCode = "DE12 77GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsFalse(Ok);
+        }
+        [TestMethod]
+        public void AddressPostCodeExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "44A";
+            string AddressPostCode = "LEW22 7GZH";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsFalse(Ok);
+        }
+        [TestMethod]
+        public void AddressStreetName()
+        {
+            //create an instance of the class we want to create
+            clsCustomerDetails ACustomer = new clsCustomerDetails();
+            //declare a variable to store the result of the validation
+            Boolean Ok;
+            //create some test data
+            string AccountNumber = "12345678";
+            string AddressCityName = "Leicester";
+            string AddressName = "44A";
+            string AddressPostCode = "LE2 7GZ";
+            string AddressStreetName = "Newarke Close";
+            string CardNumber = "1234567890123456";
+            int CustomerID = 1001;
+            string EmailAddress = "aneeka@customer.co.uk";
+            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            string FirstName = "Aneeka";
+            string LastName = "Naz";
+            string MobileNumber = "07894561332";
+            int SecurityCode = 454;
+            string SortCode = "124596";
+            //invoke the method
+            Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, CustomerID, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode);
+            //test to see if the valid method works
+            Assert.IsTrue(Ok);
+        }
+
 
     }
     }
