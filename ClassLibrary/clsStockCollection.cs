@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace ClassLibrary
 {
@@ -7,6 +8,24 @@ namespace ClassLibrary
      
         public clsStockCollection()
         {
+            /*Int32 Index = 0;
+            Int32 RecordCount = 0;
+            clsDataConnection DB = new clsDataConnection();
+            DB.Execute("sproc_Stock_SelectAll");
+            RecordCount = DB.Count;
+            while (Index < RecordCount)
+            {
+                clsStock AnStock = new clsStock();
+                AnStock.StockID = Convert.ToInt32(DB.DataTable.Rows[Index]["StockID"]);
+                AnStock.ItemName = Convert.ToString(DB.DataTable.Rows[Index]["ItemName"]);
+                AnStock.StockDescription = Convert.ToString(DB.DataTable.Rows[Index]["StockDescription"]);
+                AnStock.StockLevel = Convert.ToInt32(DB.DataTable.Rows[Index]["StockLevel"]);
+                AnStock.StockPrice = Convert.ToInt32(DB.DataTable.Rows[Index]["StockPrice"]);
+
+                mStockList.Add(AnStock);
+
+                Index++;
+            }*/
             clsStock TestItem = new clsStock();
             TestItem.StockID = 1;
             TestItem.ItemName = "GTX 1080";

@@ -35,15 +35,7 @@ namespace TestFramework_Louis_
             Assert.AreEqual(AllStock.StockList, TestList);
         }
 
-        [TestMethod]
-
-        public void CountStockOK()
-        {
-            clsStockCollection AllStock = new clsStockCollection();
-            Int32 SomeCount = 2;
-            AllStock.Count = SomeCount;
-            Assert.AreEqual(AllStock.Count, SomeCount);
-        }
+        
 
         [TestMethod]
 
@@ -85,12 +77,7 @@ namespace TestFramework_Louis_
             Assert.AreEqual(AllStock.Count, TestList.Count);
         }
 
-        [TestMethod]
-        public void TwoRecordsPresent()
-        {
-            clsStockCollection AllStock = new clsStockCollection();
-            Assert.AreEqual(AllStock.Count, 2);
-        }
+        
 
 
 
