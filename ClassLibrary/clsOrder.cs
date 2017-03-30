@@ -9,7 +9,7 @@ namespace clslibrary
         //private data member for orderNo
         private Int32 mOrderNo;
         //private data member for OrderPrice
-        private double mOrderPrice;
+        private decimal mOrderPrice;
         //private data member for productname
         private string mProductName;
         //private data member for quantityno
@@ -47,7 +47,7 @@ namespace clslibrary
                 mOrderNo = value;
             }
         }
-        public Double OrderPrice
+        public decimal OrderPrice
         {
             get
             {
@@ -100,7 +100,7 @@ namespace clslibrary
                 mDateOrdered = Convert.ToDateTime(DB.DataTable.Rows[0]["DateOrdered"]);
                 mProductName = Convert.ToString(DB.DataTable.Rows[0]["ProductName"]);
                 mQuantityNo = Convert.ToInt32(DB.DataTable.Rows[0]["QuantityNo"]);
-                mOrderPrice = Convert.ToDouble(DB.DataTable.Rows[0]["OrderPrice"]);
+                mOrderPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["OrderPrice"]);
                 //return that it worked OK
                 return true;
 
@@ -113,21 +113,10 @@ namespace clslibrary
             }
         }
 
-        public bool Valid(string orderNo, string dateOrdered, string productName, string quantityNo, string orderPrice)
+        public bool Valid( string dateOrdered, string productName, string quantityNo, string orderPrice)
         {
-            //create boolean variable to flag error
+            //BOOLEAN VARIABLE TO FLAG ERROR
             Boolean OK = true;
-            //if Order number is 0/blank
-            if (orderNo.Length <= 0)
-            {
-                OK = false;
-            }
-            //if orderno greater than 6 characters
-            if (orderNo.Length > 6)
-            {
-                OK = false;
-            }
-
             //copy the dateordered value to datetemp variable
             DateTemp = Convert.ToDateTime(dateOrdered);
             //check to see if the date is less than todays date
@@ -163,7 +152,7 @@ namespace clslibrary
             }
 
           //if product name blank
-          if (productName.Length == 2)
+          if (productName.Length < 2)
             {
                 OK = false;
             }
@@ -175,8 +164,8 @@ namespace clslibrary
 
             try
             {
-                Int32 TempQuantity = Convert.ToInt32(quantityNo);
-                if (TempQuantity < 0)
+                int TempQuantity = Convert.ToInt32(quantityNo);
+                if (TempQuantity < 1)
                 {
                     OK = false;
                 }
@@ -186,6 +175,18 @@ namespace clslibrary
                 OK = false;
             }
 
+            try
+            {
+                int TempQuantity = Convert.ToInt32(quantityNo);
+                if (TempQuantity > 10)
+                {
+                    OK = false;
+                }
+            }
+            catch
+            {
+                OK = false;
+            }
          
          
             //return value of ok

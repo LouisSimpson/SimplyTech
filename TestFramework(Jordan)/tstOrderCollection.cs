@@ -97,7 +97,9 @@ namespace TestFramework_Jordan_
         [TestMethod]
         public void TwoRecordsPresent()
         {
+            //create inst\nce of the class we want to create
             clsOrderCollection AllOrders = new clsOrderCollection();
+            //test to see that the two values are the same
             Assert.AreEqual(AllOrders.Count, 2);
         }
     }
