@@ -60,7 +60,16 @@ namespace ClassLibrary
             {
                 OK = false;
             }
-
+            //Address Street Name Validation
+            if (addressStreetName.Length < 3)
+            {
+                 OK = false;
+            }
+            else if (addressStreetName.Length > 30)
+            {
+                 OK = false;
+            }
+          
             //return variable
             return OK;
         }
