@@ -18,6 +18,8 @@ namespace ClassLibrary
         public string securitycode { get; set; }
         public string sortcode { get; set; }
         public string streetname { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
 
         public bool Valid(string accountNumber, string addressCityName, string addressName, string addressPostCode, string addressStreetName, string cardNumber, int customerID, string emailAddress, DateTime expiryDate, string firstName, string lastName, string mobileNumber, int securityCode, string sortCode)
         {
@@ -30,7 +32,7 @@ namespace ClassLibrary
                 OK = false;
             }
             //End of Account number
-            
+
             //city name validation 
             if (addressCityName.Length < 3)
             {
@@ -52,27 +54,28 @@ namespace ClassLibrary
                 OK = false;
             }
             //Address PostCode validation
-            if (addressPostCode. Length < 6)
+            if (addressPostCode.Length < 6)
             {
                 OK = false;
             }
-            else if (addressPostCode. Length > 8)
+            else if (addressPostCode.Length > 8)
             {
                 OK = false;
             }
             //Address Street Name Validation
             if (addressStreetName.Length < 3)
             {
-                 OK = false;
+                OK = false;
             }
             else if (addressStreetName.Length > 30)
             {
-                 OK = false;
+                OK = false;
             }
-          
+
             //return variable
             return OK;
         }
     }
-}
+    }
+
     
