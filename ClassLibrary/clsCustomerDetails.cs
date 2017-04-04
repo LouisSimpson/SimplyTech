@@ -7,10 +7,9 @@ namespace ClassLibrary
         public string accountnumber { get; set; }
         public string cardnumber { get; set; }
         public string cityname { get; set; }
-        public int customerid { get; set; }
         public string addressName { get; set; }
         public string emailaddress { get; set; }
-        public string expirydate { get; set; }
+        public DateTime expirydate { get; set; }
         public string firstname { get; set; }
         public string lastname { get; set; }
         public string mobilenumber { get; set; }
@@ -21,7 +20,7 @@ namespace ClassLibrary
         public string username { get; set; }
         public string password { get; set; }
 
-        public bool Valid(string accountNumber, string addressCityName, string addressName, string addressPostCode, string addressStreetName, string cardNumber, int customerID, string emailAddress, DateTime expiryDate, string firstName, string lastName, string mobileNumber, int securityCode, string sortCode)
+        public bool Valid(string accountNumber, string addressCityName, string addressName, string addressPostCode, string addressStreetName, string cardNumber, string emailAddress, DateTime expiryDate, string firstName, string lastName, string mobileNumber, string securityCode, string sortCode, string userName, string password)
         {
             //declare a variable to pass as return
             bool OK = true;
@@ -53,6 +52,8 @@ namespace ClassLibrary
             {
                 OK = false;
             }
+            //end of address name validation 
+
             //Address PostCode validation
             if (addressPostCode.Length < 6)
             {
@@ -62,6 +63,8 @@ namespace ClassLibrary
             {
                 OK = false;
             }
+            //end of address postcode validation 
+
             //Address Street Name Validation
             if (addressStreetName.Length < 3)
             {
@@ -71,11 +74,90 @@ namespace ClassLibrary
             {
                 OK = false;
             }
+            //end of address street name validation 
 
+            // card number validation 
+            if (cardNumber. Length !=16)
+            {
+                OK = false;
+            }
+            //end of card number validation 
+
+            // email address validation
+            if (emailAddress. Length < 6)
+            {
+                OK = false;
+            }
+            else if (emailAddress.Length > 30)
+            {
+                OK = false;
+            }
+            //end of email address validation 
+
+            //First Name validation 
+            if (firstName. Length <2)
+            {
+                OK = false;
+            }
+            else if (firstName. Length > 15)
+            {
+                OK = false;
+            }
+            //end of first name validation 
+
+            //Last Name validation 
+            if (lastName.Length < 2)
+            {
+                OK = false;
+            }
+            else if (lastName.Length > 15)
+            {
+                OK = false;
+            }
+            //end of last name validation 
+
+
+            // mobile number validation 
+            if (mobileNumber.Length != 11)
+            {
+                OK = false;
+            }
+            //end of mobile number validation
+
+            //Security Code number validation 
+            if (securityCode. Length != 3)
+            {
+                OK = false;
+            }
+            //end of Security Code number validation 
+
+            //user name validation
+            if (userName. Length <3)
+            {
+                OK = false;
+            }
+            else if (userName. Length > 8)
+            {
+                OK = false;
+            }
+            //end of user name validation 
+
+            //password validation 
+            if (password. Length < 3)
+            {
+                OK = false;
+            }
+            else if (password. Length > 10)
+            {
+                OK = false; 
+            }
+            //end of password validation 
+          
             //return variable
             return OK;
         }
-    }
+
+}
     }
 
     
