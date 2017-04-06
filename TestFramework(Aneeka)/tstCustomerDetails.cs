@@ -176,18 +176,18 @@ namespace MyTestFrame
             Assert.AreEqual(TestSecurityCode.securitycode, SomeData);
         }
         [TestMethod]
-        public void ExpiryDatePropertyOK()
+        public void ExpiryDateAddedPropertyOK()
         {
             //instance of the class
             clsCustomerDetails TestExpiryDate = new clsCustomerDetails();
             //create some test data to assign to the property 
-            DateTime TestData = new DateTime(2019, 05, 25);
+            DateTime TestData = DateTime.Now.Date;
             //assign the data to the property
             TestExpiryDate.expirydate = TestData;
             //test to see that the two values are the same 
-            Assert.AreEqual(TestExpiryDate.expirydate, TestDate);
+            Assert.AreEqual(TestExpiryDate.expirydate, TestData);
         }
-        [TestMethod]
+       [TestMethod]
         public void AddressNamePropertyOKr()
         {
             //instance of the class
@@ -253,7 +253,7 @@ namespace MyTestFrame
             string AccountNumber = "00856324";
             string SortCode = "004853";
             string SecurityCode = "454";
-            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            DateTime ExpiryDate = DateTime.Now.Date;
             string AddressName = "44A";
             string AddressStreetName = "Newarke Close";
             string AddressCityName = "Leicester";
@@ -2053,7 +2053,7 @@ namespace MyTestFrame
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
             string EmailAddress = "aneeka@gmail.com";
-            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            DateTime ExpiryDate = DateTime.Now.Date.AddMonths(-1);
             string FirstName = "Aneeka";
             string LastName = "Naz";
             string MobileNumber = "07894561332";
@@ -2062,7 +2062,7 @@ namespace MyTestFrame
             //invoke the method
             Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode, UserName, Password);
             //test to see if the valid method works
-            Assert.IsTrue(Ok);
+            Assert.IsFalse(Ok);
         }
         [TestMethod]
         public void ExpiryDateMinLessOne()
@@ -2081,7 +2081,7 @@ namespace MyTestFrame
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
             string EmailAddress = "aneeka@gmail.com";
-            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            DateTime ExpiryDate = DateTime.Now.Date.AddDays(-1); ;
             string FirstName = "Aneeka";
             string LastName = "Naz";
             string MobileNumber = "07894561332";
@@ -2090,7 +2090,7 @@ namespace MyTestFrame
             //invoke the method
             Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode, UserName, Password);
             //test to see if the valid method works
-            Assert.IsTrue(Ok);
+            Assert.IsFalse(Ok);
         }
         [TestMethod]
         public void ExpiryDateMin()
@@ -2109,7 +2109,7 @@ namespace MyTestFrame
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
             string EmailAddress = "aneeka@gmail.com";
-            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            DateTime ExpiryDate = DateTime.Now.Date;
             string FirstName = "Aneeka";
             string LastName = "Naz";
             string MobileNumber = "07894561332";
@@ -2137,7 +2137,7 @@ namespace MyTestFrame
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
             string EmailAddress = "aneeka@gmail.com";
-            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            DateTime ExpiryDate = DateTime.Now.Date.AddDays(1); ;
             string FirstName = "Aneeka";
             string LastName = "Naz";
             string MobileNumber = "07894561332";
@@ -2165,7 +2165,7 @@ namespace MyTestFrame
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
             string EmailAddress = "aneeka@gmail.com";
-            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            DateTime ExpiryDate = DateTime.Now.Date.AddYears(2).AddMonths(6); ;
             string FirstName = "Aneeka";
             string LastName = "Naz";
             string MobileNumber = "07894561332";
@@ -2193,7 +2193,7 @@ namespace MyTestFrame
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
             string EmailAddress = "aneeka@gmail.com";
-            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            DateTime ExpiryDate = DateTime.Now.Date.AddYears(5).AddDays(-1);
             string FirstName = "Aneeka";
             string LastName = "Naz";
             string MobileNumber = "07894561332";
@@ -2221,7 +2221,7 @@ namespace MyTestFrame
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
             string EmailAddress = "aneeka@gmail.com";
-            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            DateTime ExpiryDate = DateTime.Now.Date.AddYears(5);
             string FirstName = "Aneeka";
             string LastName = "Naz";
             string MobileNumber = "07894561332";
@@ -2249,7 +2249,7 @@ namespace MyTestFrame
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
             string EmailAddress = "aneeka@gmail.com";
-            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            DateTime ExpiryDate = DateTime.Now.Date.AddYears(5).AddDays(1);
             string FirstName = "Aneeka";
             string LastName = "Naz";
             string MobileNumber = "07894561332";
@@ -2258,7 +2258,7 @@ namespace MyTestFrame
             //invoke the method
             Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode, UserName, Password);
             //test to see if the valid method works
-            Assert.IsTrue(Ok);
+            Assert.IsFalse(Ok);
         }
         [TestMethod]
         public void ExpiryDateExtremeMax()
@@ -2277,7 +2277,7 @@ namespace MyTestFrame
             string AddressStreetName = "Newarke Close";
             string CardNumber = "1234567890123456";
             string EmailAddress = "aneeka@gmail.com";
-            DateTime ExpiryDate = new DateTime(2019, 05, 25);
+            DateTime ExpiryDate = DateTime.Now.Date.AddYears(10);
             string FirstName = "Aneeka";
             string LastName = "Naz";
             string MobileNumber = "07894561332";
@@ -2286,7 +2286,7 @@ namespace MyTestFrame
             //invoke the method
             Ok = ACustomer.Valid(AccountNumber, AddressCityName, AddressName, AddressPostCode, AddressStreetName, CardNumber, EmailAddress, ExpiryDate, FirstName, LastName, MobileNumber, SecurityCode, SortCode, UserName, Password);
             //test to see if the valid method works
-            Assert.IsTrue(Ok);
+            Assert.IsFalse(Ok);
         }
         [TestMethod]
         public void FirstNameExtremeMin()
@@ -4067,8 +4067,9 @@ namespace MyTestFrame
             //test to see if the valid method works
             Assert.IsFalse(Ok);
         }
+        
 
- }
+    }
 }
 
 

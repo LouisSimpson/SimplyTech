@@ -152,6 +152,16 @@ namespace ClassLibrary
                 OK = false; 
             }
             //end of password validation 
+
+            //expiry date validation
+            if (expiryDate.Date < DateTime.Now.Date)
+            {
+                OK = false;
+            }
+            else if (expiryDate.Date > DateTime.Now.Date.AddYears(5))
+            {
+                OK = false;
+            }
           
             //return variable
             return OK;
