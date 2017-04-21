@@ -68,7 +68,7 @@ namespace Test_Framework
             TestCompany.Email = "abcdef@dmu.ac.uk";
             TestCompany.ContactNo = "33";
             AllCompanies.ThisCompany = TestCompany;
-            Assert.AreEqual(AllCompanies.ThisCompany,TestCompany);
+            Assert.AreEqual(AllCompanies.ThisCompany, TestCompany);
         }
 
         [TestMethod]
@@ -89,11 +89,11 @@ namespace Test_Framework
 
         [TestMethod]
         public void TwoRecordsPresent()
-       {
+        {
             clsCompanyCollection AllCompanies = new clsCompanyCollection();
             Assert.AreEqual(AllCompanies.Count, 2);
         }
-       
+
 
         [TestMethod]
         public void AddMethodOK()
@@ -111,7 +111,7 @@ namespace Test_Framework
             TestItem.ContactNo = PrimaryKey;
             AllCompanies.ThisCompany.Find(PrimaryKey);
             Assert.AreEqual(AllCompanies.ThisCompany, TestItem);
-        
+
         }
 
         [TestMethod]
@@ -149,7 +149,7 @@ namespace Test_Framework
             AllCompanies.ThisCompany = TestItem;
             PrimaryKey = AllCompanies.Add();
             TestItem.ContactNo = PrimaryKey;
-            TestItem.Active = false ;
+            TestItem.Active = false;
             TestItem.CompanyNo = "DMU";
             TestItem.CompanyAddress = "85 street";
             TestItem.Email = "abcdef@dmu.ac.uk";
@@ -162,4 +162,4 @@ namespace Test_Framework
         }
     }
 }
-  
+

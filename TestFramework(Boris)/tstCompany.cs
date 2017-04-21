@@ -6,7 +6,7 @@ namespace ClassLibrary
     [TestClass]
     public class tstCompany
     {
-        
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -22,7 +22,7 @@ namespace ClassLibrary
             ACompany.CompanyNo = TestData;
             Assert.AreEqual(ACompany.CompanyNo, TestData);
         }
-             
+
 
         [TestMethod]
         public void AddressOK()
@@ -58,7 +58,7 @@ namespace ClassLibrary
             clsCompany ACompany = new clsCompany();
             Boolean Found = false;
             string ContactNo = "33";
-           Found = ACompany.Find();
+            Found = ACompany.Find();
             Assert.IsTrue(Found);
 
         }
@@ -77,7 +77,7 @@ namespace ClassLibrary
             }
             Assert.IsTrue(OK);
 
-       }
+        }
 
 
         [TestMethod]
@@ -130,7 +130,7 @@ namespace ClassLibrary
 
         [TestMethod]
         public void ValidMethodOK()
-       {
+        {
             clsCompany ACompany = new clsCompany();
             Boolean OK = false;
             Boolean Found = false;
@@ -141,8 +141,8 @@ namespace ClassLibrary
             string Email = "abcdef@dmu.ac.uk";
             string ContactNo = "33";
 
-            OK = ACompany.Valid(CompanyName,Address,Email,ContactNo);
-            
+            OK = ACompany.Valid(CompanyName, Address, Email, ContactNo);
+
             Assert.IsTrue(OK);
 
         }
@@ -412,7 +412,7 @@ namespace ClassLibrary
             Boolean OK = false;
 
             string Address = "85 Street";
-            
+
             string CompanyName = "DMU";
             string Email = "";
             Email = Email.PadRight(100, 'a');
@@ -691,7 +691,7 @@ namespace ClassLibrary
             string Address = "85 Street";
 
             string CompanyName = "DMU";
-           
+
             string Email = "abcdef@dmu.ac.uk";
 
             string ContactNo = "33";
@@ -705,4 +705,4 @@ namespace ClassLibrary
     }
 
 }
-      
+
