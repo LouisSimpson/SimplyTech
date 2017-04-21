@@ -5,8 +5,11 @@ namespace ClassLibrary
 {
     public class clsStockCollection
     {
+
+        List<clsStock> mStockList = new List<clsStock>();
+        clsStock mThisStock = new clsStock();
      
-        public clsStockCollection()
+       public clsStockCollection()
         {
             /*Int32 Index = 0;
             Int32 RecordCount = 0;
@@ -26,6 +29,7 @@ namespace ClassLibrary
 
                 Index++;
             }*/
+
             clsStock TestItem = new clsStock();
             TestItem.StockID = 1;
             TestItem.ItemName = "GTX 1080";
@@ -46,9 +50,12 @@ namespace ClassLibrary
             mStockList.Add(TestItem);
         }
 
-        public List<clsStock> ThisStock { get; set; }
+        public clsStock ThisStock
+        {
+            get { return mThisStock; }
+            set { mThisStock= value; }
+        }
 
-        List<clsStock> mStockList = new List<clsStock>();
 
         public List<clsStock> StockList
         {
@@ -72,6 +79,19 @@ namespace ClassLibrary
             {
 
             }
+        }
+
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@StockID", mThisStock.StockID);
+            DB.AddParameter("@ItemName", mThisStock.ItemName);
+            DB.AddParameter("@StockDescription", mThisStock.StockDescription);
+            DB.AddParameter("@StockLevel", mThisStock.StockLevel);
+            DB.AddParameter("@StockPrice", mThisStock.StockPrice);
+
+            return DB.Execute("sproc_tblStock_Insert");
         }
     }
 }

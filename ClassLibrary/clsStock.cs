@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 //blah
 namespace ClassLibrary
 {
@@ -199,6 +200,11 @@ namespace ClassLibrary
         public bool valid5(int v)
         {
             return true;
+        }
+
+        public static implicit operator clsStock(List<clsStock> v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

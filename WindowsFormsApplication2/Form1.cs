@@ -7,16 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Sql;
+
 
 namespace stock
 {
     public partial class Form1 : Form
     {
-        stockCollection Stock;
+       // stockCollection Stock;
 
         public Form1()
         {
             InitializeComponent();
+        }
+
+        void FillListBox()
+        {
+
         }
 
        /* public void AddStock()
@@ -24,38 +31,37 @@ namespace stock
             Stock.AddStock("Nvidia GTX 1080 8GB", "10", "600", "6");
         }*/
 
-        public void DisplayStock()
+        void DisplayStock()
         {
-            textBoxstockName.Text = Stock.GetStockstockName();
-            textBoxstockLevel.Text = Stock.GetStockstockLevel();
-            textBoxstockPrice.Text = Stock.GetStockstockPrice();
-            textBoxstockLocation.Text = Stock.GetStockstockLocation();
+            
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // create a stock object
-
-            Stock = new stock.stockCollection();
-            //AddStock();
-
-            // show data on form
+            // TODO: This line of code loads data into the 'stockDBFileDataSet1.Stock' table. You can move, or remove it, as needed.
+            this.stockTableAdapter.Fill(this.stockDBFileDataSet1.Stock);
             DisplayStock();
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            Stock.StepToNextStock();
-            // update display
-            DisplayStock();
+            
         }
 
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
-            Stock.StepToPreviousStock();
-            // update display
-            DisplayStock();
+          
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxstockName.Text = listBox1.SelectedValue.ToString();
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

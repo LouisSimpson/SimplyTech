@@ -37,16 +37,16 @@ namespace TestFramework_Louis_
 
         
 
-        [TestMethod]
+        /*[TestMethod]
 
         public void ThisStockOK()
         {
             clsStockCollection AllStock = new clsStockCollection();
             List<clsStock> TestList = new List<clsStock>();
             clsStock TestItem = new clsStock();
-            TestItem.StockID = 1;
+            TestItem.StockID = 21;
             TestItem.ItemName = "GTX 1080";
-            TestItem.StockDescription = "NVIDIA GPU";
+            TestItem.StockDescription = "Description";
             TestItem.StockLevel = 1;
             TestItem.StockPrice = 100;
 
@@ -55,7 +55,7 @@ namespace TestFramework_Louis_
             AllStock.ThisStock = TestList;
 
             Assert.AreEqual(AllStock.ThisStock, TestList);
-        }
+        }*/
 
         [TestMethod]
 
@@ -76,6 +76,31 @@ namespace TestFramework_Louis_
 
             Assert.AreEqual(AllStock.Count, TestList.Count);
         }
+
+       /* [TestMethod]
+        public void AddMethodOK()
+        {
+            clsStockCollection AllStock = new clsStockCollection();
+            clsStock TestItem = new clsStock();
+            Int32 PrimaryKey = 0;
+            TestItem.StockID = 4;
+            TestItem.ItemName = "GTX 780";
+            TestItem.StockDescription = "NVIDIA GPU";
+            TestItem.StockLevel = 1;
+            TestItem.StockPrice = 150;
+
+            AllStock.ThisStock = TestItem;
+
+            PrimaryKey = AllStock.Add();
+
+            TestItem.StockID = PrimaryKey;
+
+            AllStock.ThisStock.Find(PrimaryKey);
+
+            Assert.AreEqual(AllStock.ThisStock, TestItem);
+
+
+        }*/
 
         
 
