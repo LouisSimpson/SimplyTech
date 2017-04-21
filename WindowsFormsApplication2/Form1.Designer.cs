@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
@@ -44,6 +45,13 @@
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.stockDBFileDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stockDBFileDataSet1 = new WindowsFormsApplication2.StockDBFileDataSet();
+            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stockTableAdapter = new WindowsFormsApplication2.StockDBFileDataSetTableAdapters.StockTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDBFileDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDBFileDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAdd
@@ -54,6 +62,7 @@
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonRemove
             // 
@@ -135,9 +144,9 @@
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(27, 58);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 20);
+            this.label4.Size = new System.Drawing.Size(65, 20);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Item name";
+            this.label4.Text = "StockID";
             // 
             // label5
             // 
@@ -179,11 +188,29 @@
             // 
             // listBox1
             // 
+            this.listBox1.DataSource = this.stockBindingSource;
+            this.listBox1.DisplayMember = "ItemName";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(122, 107);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(339, 186);
             this.listBox1.TabIndex = 17;
+            this.listBox1.ValueMember = "StockID";
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // stockDBFileDataSet1
+            // 
+            this.stockDBFileDataSet1.DataSetName = "StockDBFileDataSet";
+            this.stockDBFileDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // stockBindingSource
+            // 
+            this.stockBindingSource.DataMember = "Stock";
+            this.stockBindingSource.DataSource = this.stockDBFileDataSet1;
+            // 
+            // stockTableAdapter
+            // 
+            this.stockTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -209,6 +236,9 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.stockDBFileDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDBFileDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,6 +261,11 @@
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.ListBox listBox1;
+        private WindowsFormsApplication2.StockDBFileDataSet stockDBFileDataSet;
+        private System.Windows.Forms.BindingSource stockDBFileDataSetBindingSource;
+        private WindowsFormsApplication2.StockDBFileDataSet stockDBFileDataSet1;
+        private System.Windows.Forms.BindingSource stockBindingSource;
+        private WindowsFormsApplication2.StockDBFileDataSetTableAdapters.StockTableAdapter stockTableAdapter;
     }
 }
 
