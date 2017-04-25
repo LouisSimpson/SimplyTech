@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary;
 using System.Collections.Generic;
-//test test
+//test test test
 namespace TestFramework_Louis_
 {
     [TestClass]
@@ -77,7 +77,7 @@ namespace TestFramework_Louis_
             Assert.AreEqual(AllStock.Count, TestList.Count);
         }
 
-       /* [TestMethod]
+        /*[TestMethod]
         public void AddMethodOK()
         {
             clsStockCollection AllStock = new clsStockCollection();
@@ -102,7 +102,87 @@ namespace TestFramework_Louis_
 
         }*/
 
-        
+        /*[TestMethod]
+        public void DeleteMethodOK()
+        {
+            clsStockCollection AllStock = new clsStockCollection();
+            clsStock TestItem = new clsStock();
+            Int32 PrimaryKey = 0;
+            TestItem.StockID = 1;
+            TestItem.ItemName = "GTX1080TI";
+            TestItem.StockDescription = "NVIDIA GPU";
+            TestItem.StockLevel = 2;
+            TestItem.StockPrice = 800;
+
+            AllStock.ThisStock = TestItem;
+
+            PrimaryKey = AllStock.Add();
+
+            TestItem.StockID = PrimaryKey;
+
+            AllStock.ThisStock.Find(PrimaryKey);
+
+            AllStock.Delete();
+
+            Boolean Found = AllStock.ThisStock.Find(PrimaryKey);
+
+            Assert.IsFalse(Found);
+
+
+        }*/
+
+        /*[TestMethod]
+        public void UpdateMethodOK()
+        {
+            clsStockCollection AllStock = new clsStockCollection();
+            clsStock TestItem = new clsStock();
+            Int32 PrimaryKey = 0;
+            TestItem.ItemName = "GTX1080";
+            TestItem.StockDescription = "NVIDIA GPU";
+            TestItem.StockLevel = 2;
+            TestItem.StockPrice = 150;
+
+            AllStock.ThisStock = TestItem;
+
+            PrimaryKey = AllStock.Add();
+
+            TestItem.StockID = PrimaryKey;
+
+            TestItem.ItemName = "RX550";
+            TestItem.StockDescription = "AMD GPU";
+            TestItem.StockLevel = 3;
+            TestItem.StockPrice = 400;
+
+            AllStock.ThisStock = TestItem;
+
+            AllStock.Update();
+
+            AllStock.ThisStock.Find(PrimaryKey);
+
+            Assert.AreEqual(AllStock.ThisStock, TestItem);
+        }*/
+
+        [TestMethod]
+        public void FilterByStockDescriptionOK()
+        {
+            clsStockCollection AllStock = new clsStockCollection();
+            clsStockCollection FilteredStock = new clsStockCollection();
+            FilteredStock.FilterByStockDescription("");
+            Assert.AreEqual(AllStock.Count, FilteredStock.Count);
+        }
+
+        /*[TestMethod]
+        public void FilterByStockDescriptionNoneFound()
+        {
+          
+            clsStockCollection FilteredStock = new clsStockCollection();
+            FilteredStock.FilterByStockDescription("ATI GPU");
+            Assert.AreEqual(0, FilteredStock.Count);
+        }*/
+
+
+
+
 
 
 

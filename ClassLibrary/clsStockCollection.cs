@@ -85,13 +85,38 @@ namespace ClassLibrary
         {
             clsDataConnection DB = new clsDataConnection();
 
-            DB.AddParameter("@StockID", mThisStock.StockID);
+           
             DB.AddParameter("@ItemName", mThisStock.ItemName);
             DB.AddParameter("@StockDescription", mThisStock.StockDescription);
             DB.AddParameter("@StockLevel", mThisStock.StockLevel);
             DB.AddParameter("@StockPrice", mThisStock.StockPrice);
 
-            return DB.Execute("sproc_tblStock_Insert");
+            return DB.Execute("sproc_Stock_Insert");
+        }
+
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@StockID", mThisStock.StockID);
+            DB.Execute("sproc_Stock_Delete");
+        }
+
+        public void Update()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@StockID", mThisStock.StockID);
+            DB.AddParameter("@StockDescription", mThisStock.StockDescription);
+            DB.AddParameter("@StockLevel", mThisStock.StockLevel);
+            DB.AddParameter("@StockPrice", mThisStock.StockPrice);
+
+            DB.Execute("sproc_Stock_Update");
+        }
+
+        public void FilterByStockDescription(string StockDescription)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@StockDescription", StockDescription);
+            DB.Execute("sproc_Stock_FilterByStockDescription");
         }
     }
 }

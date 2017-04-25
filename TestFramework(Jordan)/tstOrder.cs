@@ -69,7 +69,7 @@ namespace TestFramework
             //create some test data to use with the method
             Int32 OrderNo = 1;
             //invoke method
-            Found = AnOrder.Find(OrderNo);
+            //Found = AnOrder.Find(OrderNo);
             //test to see result is correct
             Assert.IsTrue(Found);
         }
@@ -82,7 +82,7 @@ namespace TestFramework
             Boolean Found = false;
             Boolean OK = true;
             Int32 OrderNo = 1;
-            Found = AnOrder.Find(OrderNo);
+            //Found = AnOrder.Find(OrderNo);
             if (AnOrder.OrderNo != 1)
             {
                 OK = false;
@@ -98,7 +98,7 @@ namespace TestFramework
             Boolean Found = false;
             Boolean OK = true;
             Int32 OrderNo = 1;
-            Found = AnOrder.Find(OrderNo);
+           // Found = AnOrder.Find(OrderNo);
             if (AnOrder.DateOrdered != Convert.ToDateTime("09/03/2017"))
             {
                 OK = false;
@@ -113,7 +113,7 @@ namespace TestFramework
             Boolean Found = false;
             Boolean OK = true;
             Int32 OrderNo = 1;
-            Found = AnOrder.Find(OrderNo);
+            //Found = AnOrder.Find(OrderNo);
             if (AnOrder.OrderPrice != 50)
             {
                 OK = false;
@@ -128,7 +128,7 @@ namespace TestFramework
             Boolean Found = false;
             Boolean OK = true;
             Int32 OrderNo = 1;
-            Found = AnOrder.Find(OrderNo);
+           // Found = AnOrder.Find(OrderNo);
             if (AnOrder.ProductName != "HP Compaq Elite 8300")
             {
                 OK = false;
@@ -143,7 +143,7 @@ namespace TestFramework
             Boolean Found = false;
             Boolean OK = true;
             Int32 OrderNo = 1;
-            Found = AnOrder.Find(OrderNo);
+           // Found = AnOrder.Find(OrderNo);
             if (AnOrder.QuantityNo != 1)
             {
                 OK = false;
