@@ -18,6 +18,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SimplyTechWebsite", "SimplyTechWebsite\", "{8CE49273-9D2F-4D97-A997-223D509F25CF}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{d764bd16-5041-4a29-8a91-e9b519cbb68b}|ClassLibrary.dll;{c0741513-4ca3-4186-b977-57c33aaaeded}|TestFramework(Aneeka).dll;{bf906d92-9e97-47fd-b389-b527ba79a443}|TestFramework(Boris).dll;{8989e019-c4cd-44c3-a1ad-e252a5126a5a}|TestFramework(Jordan).dll;{8f0de5ef-5b09-4c92-9694-71db11a054b1}|TestFramework(Khalid).dll;{f5e1bdc1-cf19-487d-8be2-f628df655504}|TestFramework(Louis).dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_57530"
 		Debug.AspNetCompiler.PhysicalPath = "SimplyTechWebsite\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57530\"

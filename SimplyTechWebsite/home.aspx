@@ -6,7 +6,8 @@
 <head runat="server">
     <title>SimplyTech</title>
     <link rel="stylesheet" type="text/css" href="StyleSheetSimply.css"/>
-    
+    <%-- Version 1 25/4/17 --%>
+    <%-- Unfinished --%>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -20,6 +21,9 @@
     <a href="">Order Section</a>
     <a href="">Staff Section</a>
             </div>
+        
+        <img src="simplyTech.png" />
+            
     </div>
     </form>
 </body>
