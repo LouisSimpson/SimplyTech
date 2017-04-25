@@ -85,14 +85,14 @@ namespace clslibrary
 
 
 
-        public bool Find(int OrderNo)
+        public bool Find(string ProductName)
         {
             //CREATE AN INSTANCE OF THE DATA CONNECTION
             clsDataConnection DB = new clsDataConnection();
             //add parameter for orderNo to search for
-            DB.AddParameter("@OrderNo", OrderNo);
+            DB.AddParameter("@ProductName", ProductName);
             //execute stored procedure
-            DB.Execute("sproc_tblOrder_FilterByOrderNo");
+            DB.Execute("sproc_tblOrder_FilterByProductName");
             //if one record is found should be either one or zero
             if (DB.Count == 1)
             {

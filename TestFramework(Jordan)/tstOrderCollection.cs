@@ -40,18 +40,8 @@ namespace TestFramework_Jordan_
             Assert.AreEqual(AllOrders.OrderList, TestList);
 
         }
-        [TestMethod]
-        public void CountOrderOk()
-        {
-            //create instance of the class we want to create
-            clsOrderCollection AllOrders = new clsOrderCollection();
-            //create test data to assign to property
-            Int32 SomeCount = 0;
-            //assign the data to the property
-            AllOrders.Count = SomeCount;
-            //test to see that two values are the same
-            Assert.AreEqual(AllOrders.Count, SomeCount);
-        }
+  
+        
         [TestMethod]
         public void ThisOrderOK()
         {
@@ -94,13 +84,6 @@ namespace TestFramework_Jordan_
             Assert.AreEqual(AllOrders.Count, TestList.Count);
 
         }
-        [TestMethod]
-        public void TwoRecordsPresent()
-        {
-            //create inst\nce of the class we want to create
-            clsOrderCollection AllOrders = new clsOrderCollection();
-            //test to see that the two values are the same
-            Assert.AreEqual(AllOrders.Count, 2);
-        }
+       
     }
 }
