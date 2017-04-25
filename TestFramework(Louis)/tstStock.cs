@@ -542,31 +542,34 @@ namespace TestFramework
         }
 
         [TestMethod]
+
+        public void TestStockNoFound()
+        {
+            clsStock AnStock = new clsStock();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 StockID = StockID = 21;
+            Found = AnStock.Find(StockID);
+
+            if (AnStock.StockID != 21)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
         
                 public void FindMethodOK()
                 {
                     clsStock AnStock = new clsStock();
                     Boolean Found = false;
-                    Int32 StockID = 1;
+                    Int32 StockID = 21;
                     Found = AnStock.Find(StockID);
                     Assert.IsTrue(Found);
                 }
 
-                [TestMethod]
-
-                public void TestStockIDFound()
-                {
-                    clsStock AnStock = new clsStock();
-                    Boolean Found = false;
-                    Boolean OK = true;
-                    Int32 StockID = 1;
-                    Found = AnStock.Find(StockID);
-                    if (AnStock.StockID != 1)
-                    {
-                        OK = false;
-                    }
-                    Assert.IsTrue(OK);
-                }
+                
 
                 [TestMethod]
 
@@ -575,9 +578,9 @@ namespace TestFramework
                     clsStock AnStock = new clsStock();
                     Boolean Found = false;
                     Boolean OK = true;
-                    Int32 StockID = 1;
+                    Int32 StockID = 21;
                     Found = AnStock.Find(StockID);
-                    if (AnStock.ItemName != "AMD GPU   ")
+                    if (AnStock.ItemName != "GTX1080")
                     {
                         OK = false;
                     }
@@ -591,9 +594,9 @@ namespace TestFramework
                     clsStock AnStock = new clsStock();
                     Boolean Found = false;
                     Boolean OK = true;
-                    Int32 StockID = 1;
+                    Int32 StockID = 21;
                     Found = AnStock.Find(StockID);
-                    if (AnStock.StockDescription != "AMD RX480")
+                    if (AnStock.StockDescription != "Description")
                     {
                         OK = false;
                     }
@@ -607,9 +610,9 @@ namespace TestFramework
                     clsStock AnStock = new clsStock();
                     Boolean Found = false;
                     Boolean OK = true;
-                    Int32 StockID = 1;
+                    Int32 StockID = 21;
                     Found = AnStock.Find(StockID);
-                    if (AnStock.StockLevel != 2)
+                    if (AnStock.StockLevel != 1)
                     {
                         OK = false;
                     }
@@ -623,9 +626,9 @@ namespace TestFramework
                     clsStock AnStock = new clsStock();
                     Boolean Found = false;
                     Boolean OK = true;
-                    Int32 StockID = 1;
+                    Int32 StockID = 21;
                     Found = AnStock.Find(StockID);
-                    if (AnStock.StockPrice != 180)
+                    if (AnStock.StockPrice != 100)
                     {
                         OK = false;
                     }

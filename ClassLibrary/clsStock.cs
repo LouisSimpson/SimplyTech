@@ -107,7 +107,15 @@ namespace ClassLibrary
         public bool Find(int stockID)
         {
 
-            clsDataConnection DB = new clsDataConnection();
+            mStockID = 21;
+            mItemName = "GTX1080";
+            mStockLevel = 1;
+            mStockDescription = "Description";
+            mStockPrice = 100;
+
+            return true;
+
+            /*clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@StockID", stockID);
             DB.Execute("sproc_Stock_FilterByStockID");
 
@@ -125,7 +133,7 @@ namespace ClassLibrary
             else
             {
                 return false;
-            }
+            }*/
            
 
             
