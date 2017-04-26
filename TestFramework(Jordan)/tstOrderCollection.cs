@@ -29,9 +29,9 @@ namespace TestFramework_Jordan_
             //set properties
             TestItem.OrderNo = 1;
             TestItem.DateOrdered = DateTime.Now.Date;
-            TestItem.ProductName = "some name";
+            TestItem.ProductName = "HP Compaq Elite 8300";
             TestItem.QuantityNo = 1;
-            TestItem.OrderPrice = 100;
+            TestItem.OrderPrice = 50;
             //add item to test list
             TestList.Add(TestItem);
             //assign data to property
@@ -40,8 +40,8 @@ namespace TestFramework_Jordan_
             Assert.AreEqual(AllOrders.OrderList, TestList);
 
         }
-  
-        
+
+
         [TestMethod]
         public void ThisOrderOK()
         {
@@ -51,9 +51,9 @@ namespace TestFramework_Jordan_
             //set properties of the test object
             TestOrder.OrderNo = 1;
             TestOrder.DateOrdered = DateTime.Now.Date;
-            TestOrder.ProductName = "some name";
+            TestOrder.ProductName = "HP Compaq Elite 8300";
             TestOrder.QuantityNo = 1;
-            TestOrder.OrderPrice = 100;
+            TestOrder.OrderPrice = 50;
             //assign data to property
             AllOrders.ThisOrder = TestOrder;
             //test to see two values are the same
@@ -73,9 +73,9 @@ namespace TestFramework_Jordan_
             //set properties
             TestItem.OrderNo = 1;
             TestItem.DateOrdered = DateTime.Now.Date;
-            TestItem.ProductName = "some name";
+            TestItem.ProductName = "HP Compaq Elite 8300";
             TestItem.QuantityNo = 1;
-            TestItem.OrderPrice = 100;
+            TestItem.OrderPrice = 50;
             //add item to test list
             TestList.Add(TestItem);
             //assign data to property
@@ -83,7 +83,63 @@ namespace TestFramework_Jordan_
             //test to see two equal values are the same
             Assert.AreEqual(AllOrders.Count, TestList.Count);
 
+
         }
-       
+        [TestMethod]
+        public void AddMethodOk()
+        {
+            //create intance of class to create
+            clsOrderCollection AllOrders = new clsOrderCollection();
+            //create test data to assign to the property
+            clsOrder TestItem = new clsOrder();
+            //var to store primary key
+            Int32 PrimaryKey = 0;
+            //set properties
+            TestItem.OrderNo = 3;
+            TestItem.DateOrdered = DateTime.Now.Date;
+            TestItem.ProductName = "Logitech M220 Silent Wireless Mouse ";
+            TestItem.QuantityNo = 2;
+            TestItem.OrderPrice = 60;
+            //set thisorder to test data
+            AllOrders.ThisOrder = TestItem;
+            //add record
+            PrimaryKey = AllOrders.Add();
+            //set primary key of the test data
+            TestItem.OrderNo = PrimaryKey;
+            //find the record
+            AllOrders.ThisOrder.Find(PrimaryKey);
+            //test to see the values are the same
+            Assert.AreEqual(AllOrders.ThisOrder, TestItem);
+        }
+        [TestMethod]
+        public void DeleteMethodOk()
+        {
+            //create intance of class to create
+            clsOrderCollection AllOrders = new clsOrderCollection();
+            //create test data to assign to the property
+            clsOrder TestItem = new clsOrder();
+            //var to store primary key
+            Int32 PrimaryKey = 0;
+            //set properties
+            TestItem.OrderNo = 13;
+            TestItem.DateOrdered = DateTime.Now.Date;
+            TestItem.ProductName = "Logitech M220 Silent Wireless Mouse";
+            TestItem.QuantityNo = 3;
+            TestItem.OrderPrice = 60;
+            //set thisorder to test data
+            AllOrders.ThisOrder = TestItem;
+            //add record
+            PrimaryKey = AllOrders.Add();
+            //set primary key of the test data
+            TestItem.OrderNo = PrimaryKey;
+            //find the record
+            AllOrders.ThisOrder.Find(PrimaryKey);
+            //delete record
+            AllOrders.Delete();
+            //find record
+            Boolean Found = AllOrders.ThisOrder.Find(PrimaryKey);
+            //test to see the values are the same
+            Assert.IsFalse(Found);
+        }
     }
 }

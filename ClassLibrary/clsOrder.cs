@@ -36,7 +36,7 @@ namespace clslibrary
 
         public DateTime DateTemp { get; private set; }
 
-        public Int32 OrderNo
+        public int OrderNo
         {
             get
             {
@@ -85,14 +85,14 @@ namespace clslibrary
 
 
 
-        public bool Find(string ProductName)
+        public bool Find(int OrderNo)
         {
             //CREATE AN INSTANCE OF THE DATA CONNECTION
             clsDataConnection DB = new clsDataConnection();
             //add parameter for orderNo to search for
-            DB.AddParameter("@ProductName", ProductName);
+            DB.AddParameter("@OrderNo", OrderNo);
             //execute stored procedure
-            DB.Execute("sproc_tblOrder_FilterByProductName");
+            DB.Execute("sproc_tblOrder_FilterByOrderNo");
             //if one record is found should be either one or zero
             if (DB.Count == 1)
             {
