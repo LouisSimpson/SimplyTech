@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="StyleSheetSimply.css"/>
    
 </head>
 <body>
@@ -28,8 +29,8 @@
         <p>
             &nbsp;</p>
         <p>
-            <asp:Button ID="ButtonOK" runat="server" Text="OK" Width="87px" OnClick="ButtonOK_Click" />
-            <asp:Button ID="ButtonCancel" runat="server" Text="Cancel" Width="83px" OnClick="ButtonCancel_Click" />
+            <asp:Button ID="ButtonOK" runat="server" Text="OK" Width="87px" OnClick="ButtonOK_Click" CssClass="btn" />
+            <asp:Button ID="ButtonCancel" runat="server" Text="Cancel" Width="83px" OnClick="ButtonCancel_Click" CssClass="btn" />
         </p>
     </form>
 </body>
