@@ -4,7 +4,6 @@ namespace ClassLibrary
 {
     public class clsCustomerDetails
     {
-        public string accountnumber { get; set; }
         public string cardnumber { get; set; }
         public string cityname { get; set; }
         public string addressName { get; set; }
@@ -15,22 +14,14 @@ namespace ClassLibrary
         public string mobilenumber { get; set; }
         public string postcode { get; set; }
         public string securitycode { get; set; }
-        public string sortcode { get; set; }
         public string streetname { get; set; }
         public string username { get; set; }
         public string password { get; set; }
 
-        public bool Valid(string accountNumber, string addressCityName, string addressName, string addressPostCode, string addressStreetName, string cardNumber, string emailAddress, DateTime expiryDate, string firstName, string lastName, string mobileNumber, string securityCode, string sortCode, string userName, string password)
+        public bool Valid(string addressCityName, string addressName, string addressPostCode, string addressStreetName, string cardNumber, string emailAddress, DateTime expiryDate, string firstName, string lastName, string mobileNumber, string securityCode, string userName, string password)
         {
             //declare a variable to pass as return
             bool OK = true;
-
-            //Account Number validation
-            if (accountNumber.Length != 8)
-            {
-                OK = false;
-            }
-            //End of Account number
 
             //city name validation 
             if (addressCityName.Length < 3)

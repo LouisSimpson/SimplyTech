@@ -22,27 +22,25 @@ namespace TestFramework_Aneeka_
             //create an instance of the class we want to create
             clsCustomerCollection ACustomer = new clsCustomerCollection();
             //create some test data to assign to the tests
-            List<clsCustomerCollection> TestList = new List<clsCustomerCollection>();
+            List<clsCustomerDetails> TestList = new List<clsCustomerDetails>();
             //add an item to the list
             //create the item of test data
-            clsCustomerCollection TestItem = new clsCustomerCollection();
+            clsCustomerDetails TestItem = new clsCustomerDetails();
             //set its properties
-            TestItem. Active = true;
-            TestItem. UserName = "aneekana";
-            TestItem. Password = "dmu";
-            TestItem. FirstName = "Jonathan";
-            TestItem. LastName = "Smith";
-            TestItem. EmailAddress = "JonathanSmith@gmail.com";
-            TestItem. MobileNumber = "07701343822";
-            TestItem. CardNumber = "0236562385697459";
-            TestItem. AccountNumber = "00856324";
-            TestItem. SortCode = "004853";
-            TestItem. SecurityCode = "454";
-            TestItem. ExpiryDate = DateTime.Now.Date;
-            TestItem. AddressName = "44A";
-            TestItem. AddressStreetName = "Newarke Close";
-            TestItem. AddressCityName = "Leicester";
-            TestItem. AddressPostCode = "LE2 7GZ";
+
+            TestItem.username = "aneekana";
+            TestItem.password = "dmu";
+            TestItem.firstname = "Jonathan";
+            TestItem.lastname = "Smith";
+            TestItem.emailaddress = "JonathanSmith@gmail.com";
+            TestItem.mobilenumber = "07701343822";
+            TestItem.cardnumber = "0236562385697459";
+            TestItem.securitycode = "454";
+            TestItem.expirydate = DateTime.Now.Date;
+            TestItem.addressName = "44A";
+            TestItem.streetname = "Newarke Close";
+            TestItem.cityname = "Leicester";
+            TestItem.postcode = "LE2 7GZ";
             //add the items to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -56,7 +54,7 @@ namespace TestFramework_Aneeka_
             //create an instance of the class we want to create
             clsCustomerCollection ACustomer = new clsCustomerCollection();
             //create soem test data to assign to the property 
-            Int32 SomeCount = 0;
+            Int32 SomeCount = 2;
             //assign the data to the property 
             ACustomer.Count = SomeCount;
             //test to see if the two values are the same
@@ -68,27 +66,24 @@ namespace TestFramework_Aneeka_
             //create an instance of the class we want to create
             clsCustomerCollection ACustomer = new clsCustomerCollection();
             //create some test data to assign to the tests
-            List<clsCustomerCollection> TestList = new List<clsCustomerCollection>();
+            List<clsCustomerDetails> TestList = new List<clsCustomerDetails>();
             //add an item to the list
             //create the item of test data
-            clsCustomerCollection TestItem = new clsCustomerCollection();
+            clsCustomerDetails TestItem = new clsCustomerDetails();
             //set its properties
-            TestItem.Active = true;
-            TestItem.UserName = "aneekana";
-            TestItem.Password = "dmu";
-            TestItem.FirstName = "Jonathan";
-            TestItem.LastName = "Smith";
-            TestItem.EmailAddress = "JonathanSmith@gmail.com";
-            TestItem.MobileNumber = "07701343822";
-            TestItem.CardNumber = "0236562385697459";
-            TestItem.AccountNumber = "00856324";
-            TestItem.SortCode = "004853";
-            TestItem.SecurityCode = "454";
-            TestItem.ExpiryDate = DateTime.Now.Date;
-            TestItem.AddressName = "44A";
-            TestItem.AddressStreetName = "Newarke Close";
-            TestItem.AddressCityName = "Leicester";
-            TestItem.AddressPostCode = "LE2 7GZ";
+            TestItem.username = "aneekana";
+            TestItem.password = "dmu";
+            TestItem.firstname = "Jonathan";
+            TestItem.lastname = "Smith";
+            TestItem.emailaddress = "JonathanSmith@gmail.com";
+            TestItem.mobilenumber = "07701343822";
+            TestItem.cardnumber = "0236562385697459";
+            TestItem.securitycode = "454";
+            TestItem.expirydate = DateTime.Now.Date;
+            TestItem.addressName = "44A";
+            TestItem.streetname = "Newarke Close";
+            TestItem.cityname = "Leicester";
+            TestItem.postcode = "LE2 7GZ";
             //add the items to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -96,6 +91,15 @@ namespace TestFramework_Aneeka_
             //test to see if the valid method works
             Assert.AreEqual(ACustomer.CustomerList, TestList.Count);
         }
-    }
+
+        [TestMethod]
+        public void TwoRecordsPresent()
+        {
+            //create an instance of the class we want to create
+            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            //test to see if the two values are the same
+            Assert.AreEqual(AllCustomer.Count, 2);
+        }
 
     }
+}
