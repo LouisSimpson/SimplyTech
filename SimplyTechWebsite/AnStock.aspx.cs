@@ -11,12 +11,12 @@ public partial class AnStock : System.Web.UI.Page
     Int32 StockID;
     protected void Page_Load(object sender, EventArgs e)
     {
-        StockID = Convert.ToInt32(Session[StockID]);
+        /*StockID = Convert.ToInt32(Session[StockID]);
         if(IsPostBack == false)
         {
             
 
-        }
+        }*/
     }
 
     /* void Add()

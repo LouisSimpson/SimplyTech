@@ -2,9 +2,13 @@
     background-color:aquamarine;
 }
 
+div.main{
+    background-color:aqua;
+}
+
 h1{
     text-align: center;
-    font-size:50px:
+    font-size:50px;
 }
 
 p{
@@ -22,4 +26,8 @@ img {
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
+}
+
+.btn {
+    background-color:red;
 }
