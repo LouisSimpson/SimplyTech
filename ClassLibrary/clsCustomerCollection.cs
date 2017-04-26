@@ -34,8 +34,7 @@ namespace ClassLibrary
             }
         }
 
-
-
+        public clsCustomerDetails ThisCustomers { get; set; }
 
         List<clsCustomerDetails> mCustomerList = new List<clsCustomerDetails>();
 
@@ -113,7 +112,7 @@ namespace ClassLibrary
                 AnCustomer.emailaddress = Convert.ToString(DB.DataTable.Rows[Index]["Emailaddress"]);
                 AnCustomer.mobilenumber = Convert.ToString(DB.DataTable.Rows[Index]["Mobilenumber"]);
                 AnCustomer.cardnumber = Convert.ToString(DB.DataTable.Rows[Index]["Cardnumber"]);
-                AnCustomer.securitycode = Convert.ToString(DB.DataTable.Rows[Index]["Securitycode"]);
+                AnCustomer.secruitycode = Convert.ToString(DB.DataTable.Rows[Index]["Securitycode"]);
                 AnCustomer.expirydate = Convert.ToDateTime(DB.DataTable.Rows[Index]["Expirydate"]);
                 AnCustomer.addressName = Convert.ToString(DB.DataTable.Rows[Index]["AddressName"]);
                 AnCustomer.streetname = Convert.ToString(DB.DataTable.Rows[Index]["Streetname"]);

@@ -4,24 +4,196 @@ namespace ClassLibrary
 {
     public class clsCustomerDetails
     {
-        public string cardnumber { get; set; }
-        public string cityname { get; set; }
-        public string addressName { get; set; }
-        public string emailaddress { get; set; }
-        public DateTime expirydate { get; set; }
-        public string firstname { get; set; }
-        public string lastname { get; set; }
-        public string mobilenumber { get; set; }
-        public string postcode { get; set; }
-        public string securitycode { get; set; }
-        public string streetname { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
+        private Int32 mcustomerid;
+        private string mcardnumber;
+        private string mcityname;
+        private string maddressName;
+        private string memailaddress;
+        private DateTime mexpirydate;
+        private string mfirstname;
+        private string mlastname;
+        private string mmobilenumber;
+        private string mpostcode;
+        private string msecuritycode;
+        private string mstreetname;
+        private string musername;
+        private string mpassword;
 
-        public bool Valid(string addressCityName, string addressName, string addressPostCode, string addressStreetName, string cardNumber, string emailAddress, DateTime expiryDate, string firstName, string lastName, string mobileNumber, string securityCode, string userName, string password)
+        public string cardnumber {
+
+            get
+            {
+                return mcardnumber;
+            }          
+                set
+            {
+                mcardnumber = value;
+            }
+        }
+
+        public string cityname
+        {
+            get
+            {
+                return mcityname;
+            }
+                
+            set
+            {
+                mcityname = value;
+            }
+         }
+
+        public string addressName
+        {
+            get
+            {
+                return maddressName;
+            }
+           set
+            {
+                maddressName = value;
+            }
+        }
+
+        public string emailaddress
+        {
+            get
+            {
+                return memailaddress;
+            }
+            set
+            {
+                memailaddress = value;
+            }
+          }
+        public DateTime expirydate
+        {
+            get
+            {
+                return mexpirydate;
+            }
+            set
+            {
+                mexpirydate = value;
+            }
+        }
+       public string firstname
+        {
+            get
+            {
+                return mfirstname;
+            }
+            set
+            {
+                mfirstname = value;
+            }
+        }
+        public string lastname
+        {
+            get
+            {
+                return mlastname;
+            }
+            set
+            {
+                mlastname = value;
+            }
+        }
+        public string mobilenumber
+        {
+            get
+            {
+                return mmobilenumber;
+            }
+            set
+            {
+                mmobilenumber = value;
+            }
+        }
+        public string postcode
+        {
+            get
+            {
+                return mpostcode;
+            }
+            set
+            {
+                mpostcode = value;
+            }
+        }
+        public string secruitycode
+        {
+            get
+            {
+                return msecuritycode; 
+            }
+            set
+            {
+                msecuritycode = value;
+            }
+        }
+        public string streetname
+        {
+            get
+            {
+                return mstreetname;
+            }
+            set
+            {
+                mstreetname = value;
+            }
+        }
+        public string username
+        {
+            get
+            {
+                return musername;
+            }
+            set
+            {
+                musername = value;
+            }
+        }
+        public string password
+        {
+            get
+            {
+                return mpassword;
+            }
+            set
+            {
+                mpassword = value;
+            }
+        }
+
+        public Int32 customerid
+        {
+            get
+            {
+                return mcustomerid; 
+            }
+            set
+            {
+                mcustomerid = value;
+            }
+        }
+
+        public bool Valid(int customerId, string addressCityName, string addressName, string addressPostCode, string addressStreetName, string cardNumber, string emailAddress, DateTime expiryDate, string firstName, string lastName, string mobileNumber, string securityCode, string userName, string password)
         {
             //declare a variable to pass as return
             bool OK = true;
+
+            //customer id validation
+            if (customerId < 3)
+            {
+                OK = false;
+            }
+            else if (customerId > 8)
+            {
+                OK = false;
+            }
+            //end of customer id validation 
 
             //city name validation 
             if (addressCityName.Length < 3)
