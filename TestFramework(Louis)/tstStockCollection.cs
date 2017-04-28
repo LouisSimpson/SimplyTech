@@ -130,8 +130,6 @@ namespace TestFramework_Louis_
             Boolean Found = AllStock.ThisStock.Find(PrimaryKey);
 
             Assert.IsFalse(Found);
-
-
         }
     
         [TestMethod]
