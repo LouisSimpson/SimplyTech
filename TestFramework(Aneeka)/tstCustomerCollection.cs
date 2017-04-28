@@ -111,15 +111,16 @@ namespace TestFramework_Aneeka_
             //var to store the primary key 
             Int32 PrimaryKey = 0;
             //set its properties
-            TestItem.username = "aneeka";
-            TestItem.password = "dmu";
-            TestItem.firstname = "Jonathan";
-            TestItem.lastname = "Smith";
-            TestItem.emailaddress = "JonathanSmith@gmail.com";
-            TestItem.mobilenumber = "07701343822";
-            TestItem.cardnumber = "0236562385697459";
+            TestItem.customerid = 5;
+            TestItem.username = "Upesh";
+            TestItem.password = "Chavda";
+            TestItem.firstname = "Upesh";
+            TestItem.lastname = "Chavda";
+            TestItem.emailaddress = "upeshchavda@sky.com";
+            TestItem.mobilenumber = "07754885553";
+            TestItem.cardnumber = "02365153439";
             TestItem.secruitycode = "454";
-            TestItem.expirydate = DateTime.Now.Date;
+            TestItem.expirydate = DateTime.Now.Date.AddMonths(5);
             TestItem.addressName = "44A";
             TestItem.streetname = "Newarke Close";
             TestItem.cityname = "Leicester";
@@ -131,9 +132,10 @@ namespace TestFramework_Aneeka_
             //set the primary key of the test data
             TestItem.customerid = PrimaryKey;
             //find the record
-            ACustomer.ThisCustomers.Find(PrimaryKey);
+           ACustomer.ThisCustomers.Find(PrimaryKey);
             //test to see if the two values are the same
             Assert.AreEqual(ACustomer.ThisCustomers, TestItem);
         }
+
     }
 }

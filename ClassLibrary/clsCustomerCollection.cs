@@ -20,6 +20,22 @@ namespace ClassLibrary
             }
 
         }
+        clsCustomerDetails mThisCustomer = new clsCustomerDetails();
+        //public property for ThisCustomer
+        public clsCustomerDetails ThisCustomer
+        {
+            get
+            {
+                return mThisCustomer;
+            }
+            set
+            {
+                mThisCustomer = value;
+            }
+        }
+        
+
+
         //public property for count
         public int count
         {
@@ -96,7 +112,7 @@ namespace ClassLibrary
             //object for data connection
             clsDataConnection DB = new clsDataConnection();
             //executre the stored procedure
-            DB.Execute("sproc_tblCustomer_SelectAll");
+            DB.Execute("sproc_Customer_SelectAll");
             //get the count of the records
             RecordCount = DB.Count;
             //while there are records to process
@@ -105,34 +121,49 @@ namespace ClassLibrary
                 //create a blank address
                 clsCustomerDetails AnCustomer = new clsCustomerDetails();
                 //read in the fields from the current record
-                AnCustomer.username = Convert.ToString(DB.DataTable.Rows[Index]["Username"]);
+                AnCustomer.customerid = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerId"]);
+                AnCustomer.username = Convert.ToString(DB.DataTable.Rows[Index]["UserName"]);
                 AnCustomer.password = Convert.ToString(DB.DataTable.Rows[Index]["Password"]);
-                AnCustomer.firstname = Convert.ToString(DB.DataTable.Rows[Index]["Firstname"]);
-                AnCustomer.lastname = Convert.ToString(DB.DataTable.Rows[Index]["Lastname"]);
-                AnCustomer.emailaddress = Convert.ToString(DB.DataTable.Rows[Index]["Emailaddress"]);
-                AnCustomer.mobilenumber = Convert.ToString(DB.DataTable.Rows[Index]["Mobilenumber"]);
-                AnCustomer.cardnumber = Convert.ToString(DB.DataTable.Rows[Index]["Cardnumber"]);
-                AnCustomer.secruitycode = Convert.ToString(DB.DataTable.Rows[Index]["Securitycode"]);
-                AnCustomer.expirydate = Convert.ToDateTime(DB.DataTable.Rows[Index]["Expirydate"]);
+                AnCustomer.firstname = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
+                AnCustomer.lastname = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
+                AnCustomer.emailaddress = Convert.ToString(DB.DataTable.Rows[Index]["EmailAddress"]);
+                AnCustomer.mobilenumber = Convert.ToString(DB.DataTable.Rows[Index]["MobileNumber"]);
+                AnCustomer.cardnumber = Convert.ToString(DB.DataTable.Rows[Index]["CardNumber"]);
+                AnCustomer.secruitycode = Convert.ToString(DB.DataTable.Rows[Index]["SecurityCode"]);
+                AnCustomer.expirydate = Convert.ToDateTime(DB.DataTable.Rows[Index]["ExpiryDate"]);
                 AnCustomer.addressName = Convert.ToString(DB.DataTable.Rows[Index]["AddressName"]);
-                AnCustomer.streetname = Convert.ToString(DB.DataTable.Rows[Index]["Streetname"]);
-                AnCustomer.cityname = Convert.ToString(DB.DataTable.Rows[Index]["Cityname"]);
-                AnCustomer.postcode = Convert.ToString(DB.DataTable.Rows[Index]["postcode"]);
+                AnCustomer.streetname = Convert.ToString(DB.DataTable.Rows[Index]["AddressStreetName"]);
+                AnCustomer.cityname = Convert.ToString(DB.DataTable.Rows[Index]["AddressCityName"]);
+                AnCustomer.postcode = Convert.ToString(DB.DataTable.Rows[Index]["AddressPostCode"]);
                 //add the record to the provate data member
                 mCustomerList.Add(AnCustomer);
                 //point at the next record
                 Index++;
-
-
-
-
-
             }
         }
 
 
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
 
+            
+            DB.AddParameter("@UserName", mThisCustomer.username);
+            DB.AddParameter("@Password", mThisCustomer.password);
+            DB.AddParameter("@AddressCityName", mThisCustomer.cityname);
+            DB.AddParameter("@AddressName", mThisCustomer.addressName);
+            DB.AddParameter("@AddressPostCode", mThisCustomer.postcode);
+            DB.AddParameter("@AddressStreetName", mThisCustomer.streetname);
+            DB.AddParameter("@CardNumber", mThisCustomer.cardnumber);
+            DB.AddParameter("@EmailAddress", mThisCustomer.emailaddress);
+            DB.AddParameter("@ExpiryDate", mThisCustomer.expirydate);
+            DB.AddParameter("@FirstName", mThisCustomer.firstname);
+            DB.AddParameter("@LastName", mThisCustomer.lastname);
+            DB.AddParameter("@MobileNumber", mThisCustomer.mobilenumber);
+            DB.AddParameter("@SecurityCode", mThisCustomer.secruitycode);
 
-
+            return DB.Execute("sproc_tblCustomer_Add");
+        }
     }
 }
+

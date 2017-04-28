@@ -4,7 +4,7 @@ namespace ClassLibrary
 {
     public class clsCustomerDetails
     {
-        private Int32 mcustomerid;
+        private Int32 mCustomerId;
         private string mcardnumber;
         private string mcityname;
         private string maddressName;
@@ -19,13 +19,14 @@ namespace ClassLibrary
         private string musername;
         private string mpassword;
 
-        public string cardnumber {
+        public string cardnumber
+        {
 
             get
             {
                 return mcardnumber;
-            }          
-                set
+            }
+            set
             {
                 mcardnumber = value;
             }
@@ -37,12 +38,12 @@ namespace ClassLibrary
             {
                 return mcityname;
             }
-                
+
             set
             {
                 mcityname = value;
             }
-         }
+        }
 
         public string addressName
         {
@@ -50,7 +51,7 @@ namespace ClassLibrary
             {
                 return maddressName;
             }
-           set
+            set
             {
                 maddressName = value;
             }
@@ -66,7 +67,7 @@ namespace ClassLibrary
             {
                 memailaddress = value;
             }
-          }
+        }
         public DateTime expirydate
         {
             get
@@ -78,7 +79,7 @@ namespace ClassLibrary
                 mexpirydate = value;
             }
         }
-       public string firstname
+        public string firstname
         {
             get
             {
@@ -126,7 +127,7 @@ namespace ClassLibrary
         {
             get
             {
-                return msecuritycode; 
+                return msecuritycode;
             }
             set
             {
@@ -171,25 +172,25 @@ namespace ClassLibrary
         {
             get
             {
-                return mcustomerid; 
+                return mCustomerId;
             }
             set
             {
-                mcustomerid = value;
+                mCustomerId = value;
             }
         }
 
-        public bool Valid(int customerId, string addressCityName, string addressName, string addressPostCode, string addressStreetName, string cardNumber, string emailAddress, DateTime expiryDate, string firstName, string lastName, string mobileNumber, string securityCode, string userName, string password)
+        public bool Valid(int CustomerId, string addressCityName, string addressName, string addressPostCode, string addressStreetName, string cardNumber, string emailAddress, DateTime expiryDate, string firstName, string lastName, string mobileNumber, string securityCode, string userName, string password)
         {
             //declare a variable to pass as return
             bool OK = true;
 
             //customer id validation
-            if (customerId < 3)
+            if (CustomerId < 4)
             {
                 OK = false;
             }
-            else if (customerId > 8)
+            else if (CustomerId > 8)
             {
                 OK = false;
             }
@@ -211,14 +212,14 @@ namespace ClassLibrary
             {
                 OK = false;
             }
-            else if (addressName.Length > 50)
+            else if (addressName.Length > 30)
             {
                 OK = false;
             }
             //end of address name validation 
 
             //Address PostCode validation
-            if (addressPostCode.Length < 6)
+            if (addressPostCode.Length < 4)
             {
                 OK = false;
             }
@@ -229,7 +230,7 @@ namespace ClassLibrary
             //end of address postcode validation 
 
             //Address Street Name Validation
-            if (addressStreetName.Length < 3)
+            if (addressStreetName.Length < 5)
             {
                 OK = false;
             }
@@ -240,14 +241,14 @@ namespace ClassLibrary
             //end of address street name validation 
 
             // card number validation 
-            if (cardNumber. Length !=16)
+            if (cardNumber.Length != 16)
             {
                 OK = false;
             }
             //end of card number validation 
 
             // email address validation
-            if (emailAddress. Length < 6)
+            if (emailAddress.Length < 6)
             {
                 OK = false;
             }
@@ -258,11 +259,11 @@ namespace ClassLibrary
             //end of email address validation 
 
             //First Name validation 
-            if (firstName. Length <2)
+            if (firstName.Length < 2)
             {
                 OK = false;
             }
-            else if (firstName. Length > 15)
+            else if (firstName.Length > 15)
             {
                 OK = false;
             }
@@ -288,36 +289,36 @@ namespace ClassLibrary
             //end of mobile number validation
 
             //Security Code number validation 
-            if (securityCode. Length != 3)
+            if (securityCode.Length != 3)
             {
                 OK = false;
             }
             //end of Security Code number validation 
 
             //user name validation
-            if (userName. Length <3)
+            if (userName.Length < 3)
             {
                 OK = false;
             }
-            else if (userName. Length > 8)
+            else if (userName.Length > 8)
             {
                 OK = false;
             }
             //end of user name validation 
 
             //password validation 
-            if (password. Length < 3)
+            if (password.Length < 3)
             {
                 OK = false;
             }
-            else if (password. Length > 10)
+            else if (password.Length > 10)
             {
-                OK = false; 
+                OK = false;
             }
             //end of password validation 
 
             //expiry date validation
-            if (expiryDate.Date < DateTime.Now.Date)
+            if (expiryDate.Date < DateTime.Now.Date.AddYears(-5))
             {
                 OK = false;
             }
@@ -325,14 +326,65 @@ namespace ClassLibrary
             {
                 OK = false;
             }
-          
+
             //return variable
             return OK;
         }
 
-}
+        public bool Find(int CustomerId)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@CustomerId", CustomerId);
+            DB.Execute("sproc_Customer_FilterByCustomerID");
+            //if one record is found (there should be either one or zero
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mCustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
+                musername = Convert.ToString(DB.DataTable.Rows[0]["UserName"]);
+                mpassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
+                mfirstname = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mlastname = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                memailaddress = Convert.ToString(DB.DataTable.Rows[0]["EmailAddress"]);
+                mmobilenumber = Convert.ToString(DB.DataTable.Rows[0]["MobileNumber"]);
+                mcardnumber = Convert.ToString(DB.DataTable.Rows[0]["CardNumber"]);
+                msecuritycode = Convert.ToString(DB.DataTable.Rows[0]["SecurityCode"]);
+                mexpirydate = Convert.ToDateTime(DB.DataTable.Rows[0]["ExpiryDate"]);
+                maddressName = Convert.ToString(DB.DataTable.Rows[0]["AddressName"]);
+                mstreetname = Convert.ToString(DB.DataTable.Rows[0]["AddressStreetName"]);
+                mcityname = Convert.ToString(DB.DataTable.Rows[0]["AddressCityName"]);
+                mpostcode = Convert.ToString(DB.DataTable.Rows[0]["AddressPostCode"]);
+                //return that everything worked ok
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return true;
+            }
 
-   
-}
 
-    
+
+            ////set the private data members to the test data value
+            //mCustomerId = 1002;
+            //musername = "aneekana";
+            //mpassword = "dmu";
+            //mfirstname = "Aneeka";
+            //mlastname = "Naz";
+            //memailaddress = "aneeka@gmail.com";
+            //mmobilenumber = "07894561332";
+            //mcardnumber = "1234567890123456";
+            //msecuritycode = "454";
+            //mexpirydate = Convert.ToDateTime("2019/ 05/ 25");
+            //maddressName = "44A";
+            //mstreetname = "Newarke Close";
+            //mcityname = "abcdefghijklmnopqrstuvwxyz";
+            //mpostcode = "LE2 7GZ";
+            //return true;
+
+        }
+    }
+
+
+}
