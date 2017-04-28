@@ -23,10 +23,10 @@ namespace TestFramework_Louis_
             List<clsStock> TestList = new List<clsStock>();
             clsStock TestItem = new clsStock();
             TestItem.StockID = 1;
-            TestItem.ItemName = "GTX 1080";
+            TestItem.ItemName = "GTX1080TI";
             TestItem.StockDescription = "NVIDIA GPU";
-            TestItem.StockLevel = 1;
-            TestItem.StockPrice = 100;
+            TestItem.StockLevel = 2;
+            TestItem.StockPrice = 800;
 
             TestList.Add(TestItem);
 
@@ -37,25 +37,25 @@ namespace TestFramework_Louis_
 
         
 
-        /*[TestMethod]
+        //[TestMethod]
 
-        public void ThisStockOK()
-        {
-            clsStockCollection AllStock = new clsStockCollection();
-            List<clsStock> TestList = new List<clsStock>();
-            clsStock TestItem = new clsStock();
-            TestItem.StockID = 21;
-            TestItem.ItemName = "GTX 1080";
-            TestItem.StockDescription = "Description";
-            TestItem.StockLevel = 1;
-            TestItem.StockPrice = 100;
+        //public void ThisStockOK()
+        //{
+        //    clsStockCollection AllStock = new clsStockCollection();
+        //    List<clsStock> TestList = new List<clsStock>();
+        //    clsStock TestItem = new clsStock();
+        //    TestItem.StockID = 21;
+        //    TestItem.ItemName = "GTX 1080";
+        //    TestItem.StockDescription = "Description";
+        //    TestItem.StockLevel = 1;
+        //    TestItem.StockPrice = 100;
 
-            TestList.Add(TestItem);
+        //    TestList.Add(TestItem);
 
-            AllStock.ThisStock = TestList;
+        //    AllStock.ThisStock = TestList;
 
-            Assert.AreEqual(AllStock.ThisStock, TestList);
-        }*/
+        //    Assert.AreEqual(AllStock.ThisStock, TestList);
+        //}
 
         [TestMethod]
 
@@ -77,13 +77,14 @@ namespace TestFramework_Louis_
             Assert.AreEqual(AllStock.Count, TestList.Count);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void AddMethodOK()
         {
             clsStockCollection AllStock = new clsStockCollection();
-            clsStock TestItem = new clsStock();
             Int32 PrimaryKey = 0;
-            TestItem.StockID = 4;
+            clsStock TestItem = new clsStock();
+            
+            TestItem.StockID =4;
             TestItem.ItemName = "GTX 780";
             TestItem.StockDescription = "NVIDIA GPU";
             TestItem.StockLevel = 1;
@@ -100,19 +101,21 @@ namespace TestFramework_Louis_
             Assert.AreEqual(AllStock.ThisStock, TestItem);
 
 
-        }*/
+        }
 
-        /*[TestMethod]
+
+
+        [TestMethod]
         public void DeleteMethodOK()
         {
             clsStockCollection AllStock = new clsStockCollection();
             clsStock TestItem = new clsStock();
             Int32 PrimaryKey = 0;
-            TestItem.StockID = 1;
-            TestItem.ItemName = "GTX1080TI";
+            TestItem.StockID = 2;
+            TestItem.ItemName = "GTX 780";
             TestItem.StockDescription = "NVIDIA GPU";
-            TestItem.StockLevel = 2;
-            TestItem.StockPrice = 800;
+            TestItem.StockLevel = 1;
+            TestItem.StockPrice = 150;
 
             AllStock.ThisStock = TestItem;
 
@@ -129,9 +132,9 @@ namespace TestFramework_Louis_
             Assert.IsFalse(Found);
 
 
-        }*/
-
-        /*[TestMethod]
+        }
+    
+        [TestMethod]
         public void UpdateMethodOK()
         {
             clsStockCollection AllStock = new clsStockCollection();
@@ -160,7 +163,7 @@ namespace TestFramework_Louis_
             AllStock.ThisStock.Find(PrimaryKey);
 
             Assert.AreEqual(AllStock.ThisStock, TestItem);
-        }*/
+        }
 
         [TestMethod]
         public void FilterByStockDescriptionOK()
@@ -171,14 +174,14 @@ namespace TestFramework_Louis_
             Assert.AreEqual(AllStock.Count, FilteredStock.Count);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void FilterByStockDescriptionNoneFound()
         {
           
             clsStockCollection FilteredStock = new clsStockCollection();
             FilteredStock.FilterByStockDescription("ATI GPU");
             Assert.AreEqual(0, FilteredStock.Count);
-        }*/
+        }
 
 
 
