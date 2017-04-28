@@ -19,7 +19,7 @@ namespace ClassLibrary
         public string StockName { get; set; }
         public string StockDesc { get; set; }
         public int Stocklvl { get; set; }
-        public int StockCost { get; set; }
+        public decimal StockCost { get; set; }
 
         public int StockID
         {
@@ -107,15 +107,15 @@ namespace ClassLibrary
         public bool Find(int stockID)
         {
 
-            mStockID = 21;
-            mItemName = "GTX1080";
-            mStockLevel = 1;
-            mStockDescription = "Description";
-            mStockPrice = 100;
+            //mStockID = 21;
+            //mItemName = "GTX1080";
+            //mStockLevel = 1;
+            //mStockDescription = "Description";
+            //mStockPrice = 100;
 
-            return true;
+            //return true;
 
-            /*clsDataConnection DB = new clsDataConnection();
+            clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@StockID", stockID);
             DB.Execute("sproc_Stock_FilterByStockID");
 
@@ -133,15 +133,17 @@ namespace ClassLibrary
             else
             {
                 return false;
-            }*/
-           
+            }
 
-            
+
+
         }
 
-        public bool ValidExists(string ItemName, string stockDescription, int stockLevel, int stockPrice)
+        public bool ValidExists(string ItemName, string stockDescription, string stockLevel, string stockPrice)
         {
 
+            int stocklevel = Convert.ToInt32(stockLevel);
+            Decimal stockprice = Convert.ToDecimal(stockPrice);
 
             Boolean OK = true;
 
@@ -172,26 +174,26 @@ namespace ClassLibrary
 
         
 
-        if (stockLevel == -1)
+        if (stocklevel == -1)
         {
 
             OK = false;
 
         }
 
-        if (stockLevel > 100)
+        if (stocklevel > 100)
         {
             OK = false;
         }
 
-        if (stockPrice == -1)
+        if (stockprice == -1)
         {
 
             OK = false;
 
         }
 
-        if (stockPrice > 10000)
+        if (stockprice > 10000)
         {
             OK = false;
         }
@@ -210,9 +212,6 @@ namespace ClassLibrary
             return true;
         }
 
-        public static implicit operator clsStock(List<clsStock> v)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

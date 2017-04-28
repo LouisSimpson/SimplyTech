@@ -11,15 +11,20 @@ public partial class AnStock : System.Web.UI.Page
     Int32 StockID;
     protected void Page_Load(object sender, EventArgs e)
     {
-        /*StockID = Convert.ToInt32(Session[StockID]);
+        StockID = Convert.ToInt32(Session["StockID"]);
         if(IsPostBack == false)
         {
-            
+           
 
-        }*/
+            if (StockID != -1)
+            {
+                DisplayStock();
+            }
+
+        }
     }
 
-    /* void Add()
+    void Add()
      {
          clsStockCollection StockBook = new clsStockCollection();
          Boolean OK = StockBook.ThisStock.ValidExists(TextBoxName.Text, TextBoxDesc.Text, TextBoxLevel.Text, TextBoxPrice.Text);
@@ -28,8 +33,8 @@ public partial class AnStock : System.Web.UI.Page
          {
              StockBook.ThisStock.ItemName = TextBoxName.Text;
              StockBook.ThisStock.StockDescription = TextBoxDesc.Text;
-             //StockBook.ThisStock.StockLevel = TextBoxLevel.Text;
-             //StockBook.ThisStock.StockPrice = TextBoxPrice.Text;
+             StockBook.ThisStock.StockLevel = Convert.ToInt32(TextBoxLevel.Text);
+             StockBook.ThisStock.StockPrice = Convert.ToDecimal(TextBoxPrice.Text);
 
              StockBook.Add();
 
@@ -39,19 +44,20 @@ public partial class AnStock : System.Web.UI.Page
          {
              lblError.Text = "There were problems with the data entered";
          }
-     }*/
+     }
 
-    /*void Update()
+    void Update()
     {
         clsStockCollection StockBook = new clsStockCollection();
         Boolean OK = StockBook.ThisStock.ValidExists(TextBoxName.Text, TextBoxDesc.Text, TextBoxLevel.Text, TextBoxPrice.Text);
 
         if (OK == true)
         {
+            StockBook.ThisStock.Find(StockID);
             StockBook.ThisStock.ItemName = TextBoxName.Text;
             StockBook.ThisStock.StockDescription = TextBoxDesc.Text;
-            StockBook.ThisStock.StockLevel = TextBoxLevel.Text;
-            StockBook.ThisStock.StockPrice = TextBoxPrice.Text;
+            StockBook.ThisStock.StockLevel = Convert.ToInt32(TextBoxLevel.Text);
+            StockBook.ThisStock.StockPrice = Convert.ToDecimal(TextBoxPrice.Text);
 
             StockBook.Update();
 
@@ -61,17 +67,17 @@ public partial class AnStock : System.Web.UI.Page
         {
             lblError.Text = "There were problems with the data entered";
         }
-    }*/
+    }
 
     protected void ButtonOK_Click(object sender, EventArgs e)
     {
        if (StockID == -1)
         {
-            //Add();
+            Add();
         }
         else
         {
-            //Update();
+            Update();
         }
         Response.Redirect("Default.aspx");
     }

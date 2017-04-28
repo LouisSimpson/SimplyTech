@@ -8,29 +8,19 @@ namespace ClassLibrary
 
         List<clsStock> mStockList = new List<clsStock>();
         clsStock mThisStock = new clsStock();
-     
-       public clsStockCollection()
+       
+
+        public clsStockCollection()
         {
-            /*Int32 Index = 0;
-            Int32 RecordCount = 0;
+           
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_Stock_SelectAll");
-            RecordCount = DB.Count;
-            while (Index < RecordCount)
-            {
-                clsStock AnStock = new clsStock();
-                AnStock.StockID = Convert.ToInt32(DB.DataTable.Rows[Index]["StockID"]);
-                AnStock.ItemName = Convert.ToString(DB.DataTable.Rows[Index]["ItemName"]);
-                AnStock.StockDescription = Convert.ToString(DB.DataTable.Rows[Index]["StockDescription"]);
-                AnStock.StockLevel = Convert.ToInt32(DB.DataTable.Rows[Index]["StockLevel"]);
-                AnStock.StockPrice = Convert.ToInt32(DB.DataTable.Rows[Index]["StockPrice"]);
+            PopulateArray(DB);
+            
+            
 
-                mStockList.Add(AnStock);
 
-                Index++;
-            }*/
-
-            clsStock TestItem = new clsStock();
+            /*clsStock TestItem = new clsStock();
             TestItem.StockID = 1;
             TestItem.ItemName = "GTX 1080";
             TestItem.StockDescription = "NVIDIA GPU";
@@ -47,13 +37,19 @@ namespace ClassLibrary
             TestItem.StockLevel = 2;
             TestItem.StockPrice = 95;
 
-            mStockList.Add(TestItem);
+            mStockList.Add(TestItem);*/
         }
 
         public clsStock ThisStock
         {
-            get { return mThisStock; }
-            set { mThisStock= value; }
+            get
+            {
+                return mThisStock;
+            }
+            set
+            {
+                mThisStock = value;
+            }
         }
 
 
@@ -105,6 +101,7 @@ namespace ClassLibrary
         {
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@StockID", mThisStock.StockID);
+            DB.AddParameter("@ItemName", mThisStock.ItemName);
             DB.AddParameter("@StockDescription", mThisStock.StockDescription);
             DB.AddParameter("@StockLevel", mThisStock.StockLevel);
             DB.AddParameter("@StockPrice", mThisStock.StockPrice);
@@ -117,6 +114,29 @@ namespace ClassLibrary
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@StockDescription", StockDescription);
             DB.Execute("sproc_Stock_FilterByStockDescription");
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            Int32 Index = 0;
+            Int32 RecordCount;
+            RecordCount = DB.Count;
+            mStockList = new List<clsStock>();
+
+            while (Index < RecordCount)
+            {
+                clsStock AnStock = new clsStock();
+                AnStock.StockID = Convert.ToInt32(DB.DataTable.Rows[Index]["StockID"]);
+                AnStock.ItemName = Convert.ToString(DB.DataTable.Rows[Index]["ItemName"]);
+                AnStock.StockDescription = Convert.ToString(DB.DataTable.Rows[Index]["StockDescription"]);
+                AnStock.StockLevel = Convert.ToInt32(DB.DataTable.Rows[Index]["StockLevel"]);
+                AnStock.StockPrice = Convert.ToInt32(DB.DataTable.Rows[Index]["StockPrice"]);
+
+                mStockList.Add(AnStock);
+
+                Index++;
+            }
         }
     }
 }
