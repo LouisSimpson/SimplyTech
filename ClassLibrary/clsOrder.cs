@@ -118,19 +118,26 @@ namespace clslibrary
             //BOOLEAN VARIABLE TO FLAG ERROR
             Boolean OK = true;
             //copy the dateordered value to datetemp variable
-            DateTemp = Convert.ToDateTime(dateOrdered);
+            DateTime DateTemp;
             //check to see if the date is less than todays date
-            if (DateTemp < DateTime.Now.Date)
+            try
+            {
+                DateTemp = Convert.ToDateTime(dateOrdered);
+                //check to see if date is less than todays date
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    OK = false;
+                }
+                //check to see if date greater
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    OK = false;
+                }
+            }
+            catch
             {
                 OK = false;
             }
-         
-            //check to see if the date is greater than todays date
-            if (DateTemp > DateTime.Now.Date)
-            {
-                OK = false;
-            }
-
             try
             {
                 decimal TempPrice =Convert.ToDecimal( orderPrice);
@@ -157,7 +164,7 @@ namespace clslibrary
                 OK = false;
             }
           //if productname too long
-          if (productName.Length > 30)
+          if (productName.Length > 50)
             {
                 OK = false;
             }

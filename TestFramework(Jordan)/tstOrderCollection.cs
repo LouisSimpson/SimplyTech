@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ClassLibrary;
 using System.Collections.Generic;
 using clslibrary;
+using MyClassLibrary;
+using ClassLibrary;
 
 namespace TestFramework_Jordan_
 {
@@ -90,16 +92,17 @@ namespace TestFramework_Jordan_
         {
             //create intance of class to create
             clsOrderCollection AllOrders = new clsOrderCollection();
-            //create test data to assign to the property
-            clsOrder TestItem = new clsOrder();
             //var to store primary key
             Int32 PrimaryKey = 0;
+            //create test data to assign to the property
+            clsOrder TestItem = new clsOrder();
+
             //set properties
-            TestItem.OrderNo = 3;
+            TestItem.OrderNo = 4;
             TestItem.DateOrdered = DateTime.Now.Date;
             TestItem.ProductName = "Logitech M220 Silent Wireless Mouse ";
-            TestItem.QuantityNo = 2;
-            TestItem.OrderPrice = 60;
+            TestItem.QuantityNo = 3;
+            TestItem.OrderPrice = 50;
             //set thisorder to test data
             AllOrders.ThisOrder = TestItem;
             //add record
@@ -140,6 +143,84 @@ namespace TestFramework_Jordan_
             Boolean Found = AllOrders.ThisOrder.Find(PrimaryKey);
             //test to see the values are the same
             Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create intance of class to create
+            clsOrderCollection AllOrders = new clsOrderCollection();
+            //create test data to assign to the property
+            clsOrder TestItem = new clsOrder();
+            //var to store primary key
+            Int32 PrimaryKey = 0;
+
+            //set properties
+            TestItem.DateOrdered = DateTime.Now.Date;
+            TestItem.ProductName = "Logitech M220 Silent Wireless Mouse ";
+            TestItem.QuantityNo = 3;
+            TestItem.OrderPrice = 50;
+            //set thisorder to test data
+            AllOrders.ThisOrder = TestItem;
+            //add record
+            PrimaryKey = AllOrders.Add();
+            //set primary key of the test data
+            TestItem.OrderNo = PrimaryKey;
+            //MODIFY TEST DATA
+            TestItem.DateOrdered = DateTime.Now.Date;
+            TestItem.ProductName = "Logitech 11 Wireless Mouse ";
+            TestItem.QuantityNo = 2;
+            TestItem.OrderPrice = 20;
+            AllOrders.ThisOrder = TestItem;
+            //UPDATE RECORD
+            AllOrders.Update();
+            //find the record
+            AllOrders.ThisOrder.Find(PrimaryKey);
+            //test to see the values are the same
+            Assert.AreEqual(AllOrders.ThisOrder, TestItem);
+        }
+        [TestMethod]
+        public void FilterByProductNameMethodOK()
+        {
+            clsOrderCollection AllOrders = new clsOrderCollection();
+            clsOrderCollection FilteredOrders = new clsOrderCollection();
+            FilteredOrders.FilterByProductName("");
+            Assert.AreEqual(AllOrders.Count, FilteredOrders.Count);
+        }
+
+        [TestMethod]
+        public void FilterByProductNameNoneFound()
+        {
+            clsOrderCollection FilteredOrders = new clsOrderCollection();
+            FilteredOrders.FilterByProductName("CXSC CPU");
+            //Test to see there are no records
+            Assert.AreEqual(0, FilteredOrders.Count);
+        }
+
+        [TestMethod]
+        public void FilterByProductNameTestDataFound()
+        {
+            clsOrderCollection FilteredOrders = new clsOrderCollection();
+            //var to tore outcome
+            Boolean OK = true;
+            FilteredOrders.FilterByProductName("Logitech M220 Silent Wireless Mouse ");
+            //Test to see there are no records
+            if (FilteredOrders.Count == 2)
+            {
+                if (FilteredOrders.OrderList[0].OrderNo !=13)
+                {
+                    OK = false;
+                }
+                if (FilteredOrders.OrderList[1].OrderNo !=)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
         }
     }
 }

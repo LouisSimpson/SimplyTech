@@ -18,7 +18,7 @@
     <a href="Default.aspx">Stock Section</a>
     <a href="DefaultCustomer.aspx">Customer Section</a>
     <a href="">Company Section</a>
-    <a href="">Order Section</a>
+    <a href="DefaultOrder.aspx">Order Section</a>
     <a href="">Staff Section</a>
             </div>
         
