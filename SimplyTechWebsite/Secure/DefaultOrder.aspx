@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="StyleSheetSimply.css"/>
+    <link rel="stylesheet" type="text/css" href="../StyleSheetSimply.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -28,7 +28,7 @@
         <asp:Button ID="BtnDelete" runat="server" OnClick="BtnDelete_Click" Text="Delete" Width="143px" CssClass="btn" />
         <asp:Button ID="BtnEdit" runat="server" OnClick="BtnEdit_Click" Text="Edit" Width="136px" CssClass="btn" />
 
-         <img src="simplyTech.png" />
+         <img src="../simplyTech.png" />
     </form>
 </body>
 </html>
