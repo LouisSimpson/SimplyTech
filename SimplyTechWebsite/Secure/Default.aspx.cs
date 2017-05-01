@@ -22,6 +22,7 @@ public partial class _Default : System.Web.UI.Page
         ListBoxStock.DataValueField = "StockID";
         ListBoxStock.DataTextField = "ItemName";
         ListBoxStock.DataBind();
+        
     }
 
     protected void ListBoxStock_SelectedIndexChanged(object sender, EventArgs e)

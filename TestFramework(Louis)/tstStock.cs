@@ -548,10 +548,10 @@ namespace TestFramework
             clsStock AnStock = new clsStock();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 StockID = StockID = 21;
+            Int32 StockID = StockID = 29;
             Found = AnStock.Find(StockID);
 
-            if (AnStock.StockID != 21)
+            if (AnStock.StockID != 29)
             {
                 OK = false;
             }
@@ -564,7 +564,7 @@ namespace TestFramework
                 {
                     clsStock AnStock = new clsStock();
                     Boolean Found = false;
-                    Int32 StockID = 21;
+                    Int32 StockID = 29;
                     Found = AnStock.Find(StockID);
                     Assert.IsTrue(Found);
                 }
@@ -578,9 +578,9 @@ namespace TestFramework
                     clsStock AnStock = new clsStock();
                     Boolean Found = false;
                     Boolean OK = true;
-                    Int32 StockID = 21;
+                    Int32 StockID = 29;
                     Found = AnStock.Find(StockID);
-                    if (AnStock.ItemName != "GTX1080")
+                    if (AnStock.ItemName != "RX550")
                     {
                         OK = false;
                     }
@@ -594,9 +594,9 @@ namespace TestFramework
                     clsStock AnStock = new clsStock();
                     Boolean Found = false;
                     Boolean OK = true;
-                    Int32 StockID = 21;
+                    Int32 StockID = 29;
                     Found = AnStock.Find(StockID);
-                    if (AnStock.StockDescription != "Description")
+                    if (AnStock.StockDescription != "AMD GPU")
                     {
                         OK = false;
                     }
@@ -610,9 +610,9 @@ namespace TestFramework
                     clsStock AnStock = new clsStock();
                     Boolean Found = false;
                     Boolean OK = true;
-                    Int32 StockID = 21;
+                    Int32 StockID = 29;
                     Found = AnStock.Find(StockID);
-                    if (AnStock.StockLevel != 1)
+                    if (AnStock.StockLevel != 3)
                     {
                         OK = false;
                     }
@@ -626,9 +626,9 @@ namespace TestFramework
                     clsStock AnStock = new clsStock();
                     Boolean Found = false;
                     Boolean OK = true;
-                    Int32 StockID = 21;
+                    Int32 StockID = 29;
                     Found = AnStock.Find(StockID);
-                    if (AnStock.StockPrice != 100)
+                    if (AnStock.StockPrice != 400)
                     {
                         OK = false;
                     }
