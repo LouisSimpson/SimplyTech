@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>SimplyTech</title>
-    <link rel="stylesheet" type="text/css" href="StyleSheetSimply.css"/>
+    <link rel="stylesheet" type="text/css" href="../StyleSheetSimply.css"/>
     <%-- Version 1 25/4/17 --%>
     <%-- Unfinished --%>
 </head>
@@ -14,6 +14,7 @@
     <div>
         <h1>SimplyTech</h1>
     <p>Welcome to the simply tech system!</p>
+        <p>Below you can access the section of the system you desire </p>
         <div style ="text-align:center">
     <a href="Default.aspx">Stock Section</a>
     <a href="DefaultCustomer.aspx">Customer Section</a>
@@ -22,7 +23,7 @@
     <a href="">Staff Section</a>
             </div>
         
-        <img src="simplyTech.png" />
+        <img src="../simplyTech.png" />
             
     </div>
     </form>

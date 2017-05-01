@@ -211,7 +211,7 @@ namespace TestFramework_Jordan_
                 {
                     OK = false;
                 }
-                if (FilteredOrders.OrderList[1].OrderNo !=)
+               // if (FilteredOrders.OrderList[1].OrderNo !=)
                 {
                     OK = false;
                 }
