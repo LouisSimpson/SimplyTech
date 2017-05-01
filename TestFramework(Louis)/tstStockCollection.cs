@@ -35,27 +35,26 @@ namespace TestFramework_Louis_
             Assert.AreEqual(AllStock.StockList, TestList);
         }
 
-        
 
-        //[TestMethod]
 
-        //public void ThisStockOK()
-        //{
-        //    clsStockCollection AllStock = new clsStockCollection();
-        //    List<clsStock> TestList = new List<clsStock>();
-        //    clsStock TestItem = new clsStock();
-        //    TestItem.StockID = 21;
-        //    TestItem.ItemName = "GTX 1080";
-        //    TestItem.StockDescription = "Description";
-        //    TestItem.StockLevel = 1;
-        //    TestItem.StockPrice = 100;
+        [TestMethod]
 
-        //    TestList.Add(TestItem);
+        public void ThisStockOK()
+        {
+            clsStockCollection AllStock = new clsStockCollection();
+            clsStock TestItem = new clsStock();
+            TestItem.StockID = 1;
+            TestItem.ItemName = "GTX 1080";
+            TestItem.StockDescription = "NVIDIA GPU";
+            TestItem.StockLevel = 1;
+            TestItem.StockPrice = 100;
 
-        //    AllStock.ThisStock = TestList;
 
-        //    Assert.AreEqual(AllStock.ThisStock, TestList);
-        //}
+
+            AllStock.ThisStock = TestItem;
+
+            Assert.AreEqual(AllStock.ThisStock, TestItem);
+        }
 
         [TestMethod]
 

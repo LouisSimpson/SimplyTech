@@ -5,12 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="StyleSheetSimply.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div align="center">
     
-        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="Login.aspx">
+        
+    
+        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="Login.aspx" Width="382px">
             <WizardSteps>
                 <asp:CreateUserWizardStep runat="server" />
                 <asp:CompleteWizardStep runat="server" />
@@ -18,6 +21,7 @@
         </asp:CreateUserWizard>
     
     </div>
+        <img src="simplyTech.png" />
     </form>
 </body>
 </html>
