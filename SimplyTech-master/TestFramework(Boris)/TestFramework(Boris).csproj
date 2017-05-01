@@ -51,7 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="tstComapy.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="tstCompanyCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -26,7 +26,7 @@ namespace ClassLibrary
         public void CompanyNoOK()
         {
             clsCompany ACompany = new clsCompany();
-            int TestData = 33;
+            string TestData = "33";
             ACompany.CompanyNo = TestData;
             Assert.AreEqual(ACompany.CompanyNo, TestData);
         }
@@ -53,7 +53,7 @@ namespace ClassLibrary
         public void ContactNoOK()
         {
             clsCompany ACompany = new clsCompany();
-            int TestData = 0744121212;
+            string TestData = "0744121212";
             ACompany.ContactNo = TestData;
             Assert.AreEqual(ACompany.ContactNo, TestData);
 
