@@ -38,14 +38,14 @@ namespace ClassLibrary
                 DB.AddParameter("@CompanyName", mThisAddress.CompanyName);
                 DB.AddParameter("@Address", mThisAddress.CompanyAddress);
                 DB.AddParameter("@Email", mThisAddress.Email);
-                DB.AddParameter("@CompanyNo", mThisAddress.CompanyNo);
+                DB.AddParameter("@ContactNo", mThisAddress.ContactNo);
                 return DB.Execute("sproc_tblCompany_Insert");
             }
 
             public void Delete()
             {
                 clsDataConnection DB = new clsDataConnection();
-                DB.AddParameter("@CompanyNo", mThisCompany.CompanyNo);
+                DB.AddParameter("@ContactNo", mThisCompany.ContactNo);
                 DB.Execute("sproc_tblCompany_Delete");
             }
 
@@ -55,7 +55,7 @@ namespace ClassLibrary
                 DB.AddParameter("@CompanyName", mThisAddress.CompanyName);
                 DB.AddParameter("@Address", mThisAddress.CompanyAddress);
                 DB.AddParameter("@Email", mThisAddress.Email);
-                DB.AddParameter("@CompanyNo", mThisAddress.CompanyNo);
+                DB.AddParameter("@ContactNo", mThisAddress.ContactNo);
                 DB.Execute("sproc_tblCompany_Update");
             }
             public clsCompanyCollection1()
@@ -72,7 +72,7 @@ namespace ClassLibrary
                     mCompany.CompanyName = Convert.ToString(DB.DataTable.Rows[Index]["DMU"]);
                     mCompany.CompanyAddress = Convert.ToString(DB.DataTable.Rows[Index]["85 street"]);
                     mCompany.Email = Convert.ToString(DB.DataTable.Rows[Index]["abcdef@dmu.ac.uk"]);
-                    mCompany.ContactNo = Convert.ToString(DB.DataTable.Rows[Index]["33"]);
+                    mCompany.ContactNo = Convert.ToString(DB.DataTable.Rows[Index]["0744121212"]);
                     mCompanyList.Add(mCompany);
                     Index++;
 
