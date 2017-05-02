@@ -11,4 +11,18 @@ public partial class DefaultCustomer : System.Web.UI.Page
     {
 
     }
+
+
+
+
+    protected void BtnLogIn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("CustomerLogin.aspx");
+    }
+
+    protected void BtnRegister_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("CustomerSignUp.aspx");
+
+    }
 }
