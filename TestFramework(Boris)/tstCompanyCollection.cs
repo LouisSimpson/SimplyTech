@@ -12,7 +12,7 @@ namespace Test_Framework
         public object TestList { get; set; }
         public object CompanyList { get; set; }
         public object ThisCompany { get; set; }
-        public object AllAddresses { get; private set; }
+       // public object AllAddresses { get;  set; }
 
         [TestMethod]
         public void TestMethod1()
@@ -33,7 +33,7 @@ namespace Test_Framework
             List<clsCompany> TestList = new List<clsCompany>();
             clsCompany TestItem = new clsCompany();
             TestItem.Active = true;
-            TestItem.CompanyNo = "DMU";
+            TestItem.CompanyName = "DMU";
             TestItem.CompanyAddress = "85 street";
             TestItem.Email = "abcdef@dmu.ac.uk";
             TestItem.ContactNo = "33";
@@ -63,7 +63,7 @@ namespace Test_Framework
             clsCompanyCollection AllCompanies = new clsCompanyCollection();
             clsCompany TestCompany = new clsCompany();
             TestCompany.Active = true;
-            TestCompany.CompanyNo = "DMU";
+            TestCompany.CompanyName = "DMU";
             TestCompany.CompanyAddress = "85 street";
             TestCompany.Email = "abcdef@dmu.ac.uk";
             TestCompany.ContactNo = "33";
@@ -78,7 +78,7 @@ namespace Test_Framework
             List<clsCompany> TestList = new List<clsCompany>();
             clsCompany TestItem = new clsCompany();
             TestItem.Active = true;
-            TestItem.CompanyNo = "DMU";
+            TestItem.CompanyName = "DMU";
             TestItem.CompanyAddress = "85 street";
             TestItem.Email = "abcdef@dmu.ac.uk";
             TestItem.ContactNo = "33";
@@ -100,9 +100,9 @@ namespace Test_Framework
         {
             clsCompanyCollection AllCompanies = new clsCompanyCollection();
             clsCompany TestItem = new clsCompany();
-            string PrimaryKey = "33";
+            string PrimaryKey = "0744121212";
             TestItem.Active = true;
-            TestItem.CompanyNo = "DMU";
+            TestItem.CompanyName = "DMU";
             TestItem.CompanyAddress = "85 street";
             TestItem.Email = "abcdef@dmu.ac.uk";
             TestItem.ContactNo = "33";
@@ -119,9 +119,9 @@ namespace Test_Framework
         {
             clsCompanyCollection AllCompanies = new clsCompanyCollection();
             clsCompany TestItem = new clsCompany();
-            string PrimaryKey = "33";
+            string PrimaryKey = "0744121212";
             TestItem.Active = true;
-            TestItem.CompanyNo = "DMU";
+            TestItem.CompanyName = "DMU";
             TestItem.CompanyAddress = "85 street";
             TestItem.Email = "abcdef@dmu.ac.uk";
             TestItem.ContactNo = "33";
@@ -140,19 +140,19 @@ namespace Test_Framework
         {
             clsCompanyCollection AllCompanies = new clsCompanyCollection();
             clsCompany TestItem = new clsCompany();
-            string PrimaryKey = "33";
+            string PrimaryKey = "0744121212";
             TestItem.Active = true;
-            TestItem.CompanyNo = "DMU";
+            TestItem.CompanyName = "DMU";
             TestItem.CompanyAddress = "85 street";
             TestItem.Email = "abcdef@dmu.ac.uk";
-            TestItem.ContactNo = "33";
+            TestItem.ContactNo = "0744121212";
             AllCompanies.ThisCompany = TestItem;
             PrimaryKey = AllCompanies.Add();
             TestItem.ContactNo = PrimaryKey;
             TestItem.Active = false ;
-            TestItem.CompanyNo = "DMU";
-            TestItem.CompanyAddress = "85 street";
-            TestItem.Email = "abcdef@dmu.ac.uk";
+            TestItem.CompanyName = "CEX";
+            TestItem.CompanyAddress = "111 street";
+            TestItem.Email = "CEX@gmail.com";
             TestItem.ContactNo = "33";
             AllCompanies.ThisCompany = TestItem;
             AllCompanies.Update();

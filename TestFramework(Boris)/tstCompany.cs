@@ -19,8 +19,8 @@ namespace ClassLibrary
         {
             clsCompany ACompany = new clsCompany();
             string TestData = "DMU";
-            ACompany.CompanyNo = TestData;
-            Assert.AreEqual(ACompany.CompanyNo, TestData);
+            ACompany.ContactNo = TestData;
+            Assert.AreEqual(ACompany.ContactNo, TestData);
         }
              
 
@@ -57,7 +57,7 @@ namespace ClassLibrary
         {
             clsCompany ACompany = new clsCompany();
             Boolean Found = false;
-           //string ContactNo = "33";
+           string ContactNo = "0744121212";
            Found = ACompany.Find();
             Assert.IsTrue(Found);
 
@@ -69,9 +69,9 @@ namespace ClassLibrary
             clsCompany ACompany = new clsCompany();
             Boolean Found = false;
             Boolean OK = true;
-            //string ContactNo = "33";
+           // string ContactNo = "0744121212";
             Found = ACompany.Find();
-            if (ACompany.ContactNo == "33")
+            if (ACompany.ContactNo == "0744121212")
             {
                 OK = false;
             }
@@ -117,7 +117,7 @@ namespace ClassLibrary
             Boolean Found = false;
             Boolean OK = true;
             Found = ACompany.Find();
-            if (ACompany.CompanyNo == "DMU")
+            if (ACompany.ContactNo == "0744121212")
             {
                 OK = true;
             }
@@ -139,7 +139,7 @@ namespace ClassLibrary
             string CompanyName = "DMU";
             string Address = "85 Street";
             string Email = "abcdef@dmu.ac.uk";
-            string ContactNo = "33";
+            string ContactNo = "0744121212";
 
             OK = ACompany.Valid(CompanyName,Address,Email,ContactNo);
             
@@ -156,7 +156,7 @@ namespace ClassLibrary
             string Address = "";
             string CompanyName = "DMU";
             string Email = "abcdef@dmu.ac.uk";
-            string ContactNo = "33";
+            string ContactNo = "0744121212";
 
             OK = ACompany.Valid(CompanyName, Address, Email, ContactNo);
 
@@ -173,7 +173,7 @@ namespace ClassLibrary
             string Address = "85 street";
             string CompanyName = "DMU";
             string Email = "abcdef@dmu.ac.uk";
-            string ContactNo = "33";
+            string ContactNo = "0744121212";
 
             OK = ACompany.Valid(CompanyName, Address, Email, ContactNo);
 
@@ -207,7 +207,7 @@ namespace ClassLibrary
             string Address = "85 streeeet";
             string CompanyName = "DMU";
             string Email = "abcdef@dmu.ac.uk";
-            string ContactNo = "33";
+            string ContactNo = "0744121212";
 
             OK = ACompany.Valid(CompanyName, Address, Email, ContactNo);
 
@@ -224,7 +224,7 @@ namespace ClassLibrary
             string Address = "85 streeeeet";
             string CompanyName = "DMU";
             string Email = "abcdef@dmu.ac.uk";
-            string ContactNo = "33";
+            string ContactNo = "0744121212";
 
             OK = ACompany.Valid(CompanyName, Address, Email, ContactNo);
 
@@ -241,7 +241,7 @@ namespace ClassLibrary
             string Address = "85 streett";
             string CompanyName = "DMU";
             string Email = "abcdef@dmu.ac.uk";
-            string ContactNo = "33";
+            string ContactNo = "0744121212";
 
             OK = ACompany.Valid(CompanyName, Address, Email, ContactNo);
 
@@ -258,7 +258,7 @@ namespace ClassLibrary
             string Address = "85 street";
             string CompanyName = "DMU";
             string Email = "abcdef@dmu.ac.uk";
-            string ContactNo = "33";
+            string ContactNo = "0744121212";
 
             OK = ACompany.Valid(CompanyName, Address, Email, ContactNo);
 
@@ -276,7 +276,7 @@ namespace ClassLibrary
             Address = Address.PadRight(250, 'a');
             string CompanyName = "DMU";
             string Email = "abcdef@dmu.ac.uk";
-            string ContactNo = "33";
+            string ContactNo = "0744121212";
 
             OK = ACompany.Valid(CompanyName, Address, Email, ContactNo);
 
@@ -295,7 +295,7 @@ namespace ClassLibrary
             string Address = "85 Street";
             string CompanyName = "DMU";
             string Email = "";
-            string ContactNo = "33";
+            string ContactNo = "0744121212";
 
             OK = ACompany.Valid(CompanyName, Address, Email, ContactNo);
 
@@ -312,7 +312,7 @@ namespace ClassLibrary
             string Address = "85 street";
             string CompanyName = "DMU";
             string Email = "abcdef@dmu.ac.uk";
-            string ContactNo = "33";
+            string ContactNo = "0744121212";
 
             OK = ACompany.Valid(CompanyName, Address, Email, ContactNo);
 
@@ -329,7 +329,7 @@ namespace ClassLibrary
             string Address = "85 streeet";
             string CompanyName = "DMU";
             string Email = "abcdef@dmu.ac.uk";
-            string ContactNo = "33";
+            string ContactNo = "0744121212";
 
             OK = ACompany.Valid(CompanyName, Address, Email, ContactNo);
 
@@ -346,7 +346,7 @@ namespace ClassLibrary
             string Address = "85 streeeet";
             string CompanyName = "DMU";
             string Email = "abcdef@dmu.ac.uk";
-            string ContactNo = "33";
+            string ContactNo = "0744121212";
 
             OK = ACompany.Valid(CompanyName, Address, Email, ContactNo);
 
