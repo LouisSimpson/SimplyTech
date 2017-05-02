@@ -361,7 +361,7 @@ namespace ClassLibrary
             else
             {
                 //return false indicating a problem
-                return true;
+                return false;
             }
 
 
