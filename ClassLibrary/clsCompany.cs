@@ -23,7 +23,7 @@ namespace ClassLibrary
 
 
         private string mCompanyName;
-        public string CompanyName
+        public string CompanyNo
         {
             get
             {
@@ -37,8 +37,8 @@ namespace ClassLibrary
 
 
 
-        private int mContactNo;
-        public int ContactNo
+        private string mContactNo;
+        public string ContactNo
         {
             get
             {
@@ -63,10 +63,91 @@ namespace ClassLibrary
             }
         }
 
-        public bool Find(int contactNo)
+        public bool Active { get; set; }
+        public string CompanyAddress { get; set; }
+        public string CompanyName { get; set; }
+        public bool mActive { get; set; }
+       // public bool Find(string CompanyNo)
+        //{
+        //    return true;
+        //}
+
+        public bool Find(string CompanyNo)
         {
-            mContactNo = 33;
-            return true;
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@ContactNo", ContactNo);
+            DB.Execute("sproc_tblCompany_FilterBycontactNo");
+            if (DB.Count == 1)
+            {
+                mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
+                mCompanyName = Convert.ToString(DB.DataTable.Rows[0]["CompanyName"]);
+                mContactNo = Convert.ToString(DB.DataTable.Rows[0]["ContactNo"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
+        public bool Find()
+        {
+           return true;
+        }
+
+        public bool Valid(string companyName, string address, string email, string contactNo)
+        {
+            Boolean OK = true;
+            if (address.Length == 0)
+            {
+                OK = false;
+            }
+
+            if (address.Length > 101)
+            {
+                OK = false;
+            }
+            if (address.Length < 1)
+             {
+                 OK = false;
+             }
+
+            if (email.Length == 0)
+            {
+                OK = false;
+            }
+            if (email.Length > 51)
+            {
+                OK = false;
+            }
+
+            if (companyName.Length == 0)
+            {
+                OK = false;
+            }
+            if (companyName.Length > 31)
+            {
+                OK = false;
+            }
+
+            if (contactNo.Length == 0)
+            {
+                OK = false;
+            }
+            if (contactNo.Length > 16)
+            {
+                OK = false;
+            }
+
+
+            return OK;
+        }
+        
     }
-}
+    }
+
+

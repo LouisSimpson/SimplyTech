@@ -129,7 +129,7 @@ namespace Test_Framework
             PrimaryKey = AllCompanies.Add();
             TestItem.ContactNo = PrimaryKey;
             AllCompanies.ThisCompany.Find(PrimaryKey);
-            AllAddresses.Delete();
+            AllCompanies.Delete();
             Boolean Found = AllCompanies.ThisCompany.Find(PrimaryKey);
             Assert.IsFalse(Found);
 
@@ -155,7 +155,7 @@ namespace Test_Framework
             TestItem.Email = "abcdef@dmu.ac.uk";
             TestItem.ContactNo = "33";
             AllCompanies.ThisCompany = TestItem;
-            AllAddresses.Update();
+            AllCompanies.Update();
             AllCompanies.ThisCompany.Find(PrimaryKey);
             Assert.AreEqual(AllCompanies.ThisCompany, TestItem);
 

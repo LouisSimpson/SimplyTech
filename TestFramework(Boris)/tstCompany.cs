@@ -57,7 +57,7 @@ namespace ClassLibrary
         {
             clsCompany ACompany = new clsCompany();
             Boolean Found = false;
-            string ContactNo = "33";
+           //string ContactNo = "33";
            Found = ACompany.Find();
             Assert.IsTrue(Found);
 
@@ -69,7 +69,7 @@ namespace ClassLibrary
             clsCompany ACompany = new clsCompany();
             Boolean Found = false;
             Boolean OK = true;
-            string ContactNo = "33";
+            //string ContactNo = "33";
             Found = ACompany.Find();
             if (ACompany.ContactNo == "33")
             {
