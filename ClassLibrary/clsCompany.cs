@@ -66,11 +66,16 @@ namespace ClassLibrary
         public bool Active { get; set; }
         public string CompanyAddress { get; set; }
         public string CompanyName { get; set; }
+        public bool mActive { get; set; }
+       // public bool Find(string CompanyNo)
+        //{
+        //    return true;
+        //}
 
-        public bool Find()
+        public bool Find(string CompanyNo)
         {
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@contactNo", ContactNo);
+            DB.AddParameter("@ContactNo", ContactNo);
             DB.Execute("sproc_tblCompany_FilterBycontactNo");
             if (DB.Count == 1)
             {
@@ -78,6 +83,8 @@ namespace ClassLibrary
                 mCompanyName = Convert.ToString(DB.DataTable.Rows[0]["CompanyName"]);
                 mContactNo = Convert.ToString(DB.DataTable.Rows[0]["ContactNo"]);
                 mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
 
                 return true;
             }
@@ -87,11 +94,10 @@ namespace ClassLibrary
             }
         }
 
-       // public bool Find (string ContactNo)
-       // {
-         //   
-            
-       // }
+        public bool Find()
+        {
+           return true;
+        }
 
         public bool Valid(string companyName, string address, string email, string contactNo)
         {

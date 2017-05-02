@@ -1,6 +1,4 @@
-﻿using ClassLibrary;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace ClassLibrary
@@ -133,6 +131,16 @@ namespace ClassLibrary
             }
 
         public string Add()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update()
         {
             throw new NotImplementedException();
         }
