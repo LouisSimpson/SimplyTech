@@ -54,15 +54,17 @@
         
    
         <br />
-        <
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server" Text="CONFIRM" OnClick="Button1_Click" />
+        <asp:Button ID="Button1" runat="server" Text="Add" OnClick="BtnAdd_Click" />
+        
+    
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Back" />
         
     
         <br />
         <br />
-        <asp:Label ID="Label12" runat="server" Text="lblError"></asp:Label>
+        <asp:Label ID="lblError" runat="server" Text="lblError"></asp:Label>
         <br />
         
     

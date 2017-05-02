@@ -13,11 +13,12 @@
 &nbsp;<asp:TextBox ID="TxtLogin" runat="server"></asp:TextBox>
         <br />
         <asp:Label ID="password" runat="server" Text="Password"></asp:Label>
-        <asp:TextBox ID="TxtPassword" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
         <br />
         <br />
-        <br />
-        <asp:Button ID="confirm" runat="server" Text="CONFIRM" OnClick="BtnConfirm_Click"/>
+        <asp:Button ID="confirm" runat="server" Text="LogIn" OnClick="BtnConfirm_Click"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </form>
     </body>

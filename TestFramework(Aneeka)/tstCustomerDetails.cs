@@ -269,7 +269,7 @@ namespace MyTestFrame
                 Ok = false;
             }
             // Test to see the result is correct
-            Assert.IsTrue(Ok);
+            Assert.IsFalse(Ok);
         }
         [TestMethod]
         public void TestExpiryDateOK()

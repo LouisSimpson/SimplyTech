@@ -165,6 +165,30 @@ namespace ClassLibrary
 
         }
 
+        public bool login(string username, string password)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            try
+            {
+                DB.AddParameter("@username", username);
+                DB.AddParameter("@password", password);
+                DB.Execute("sproc_Customer_LogIn");
+                string dbUsername = Convert.ToString(DB.DataTable.Rows[0]["UserName"]);
+                if (username == dbUsername)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public void FilterByCustomerID(int CustomerId)
         {
             //filters the records based on a full or partial customer Id

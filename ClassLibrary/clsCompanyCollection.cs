@@ -78,6 +78,11 @@ namespace ClassLibrary
 
                 }
             }
+            public int Find (int PrimaryKey)
+            {
+                
+                return PrimaryKey;
+            }
              //clsCompany SomeCompany = new clsCompany();
            // SomeCompany.Find(3);
 
